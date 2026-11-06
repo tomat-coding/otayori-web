@@ -1,5 +1,5 @@
 ---
-import { SITE_URL } from "../config";
+import { SITE_URL, withBase } from "../config";
 import type { Copy } from "../i18n/ja";
 import Base from "../layouts/Base.astro";
 import Devices from "./Devices.astro";
@@ -21,7 +21,7 @@ interface Props {
 }
 
 const { copy } = Astro.props;
-const url = new URL(copy.lang === "ja" ? "/" : "/en/", SITE_URL).href;
+const url = new URL(withBase(copy.lang === "ja" ? "/" : "/en/"), SITE_URL).href;
 const { features } = copy;
 
 const app = {
@@ -72,7 +72,7 @@ const faqPage = {
     <HandoutPhrases phrases={copy.phrases} />
     <Features features={copy.features} />
     <Devices copy={copy} />
-    <Trust trust={copy.trust} privacyHref={copy.footer.privacyHref} />
+    <Trust trust={copy.trust} privacyHref={withBase(copy.footer.privacyHref)} />
     <EarlyAccess earlyAccess={copy.earlyAccess} />
     <Faq faq={copy.faq} />
     <GetApp copy={copy} />

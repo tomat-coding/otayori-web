@@ -2,7 +2,7 @@
 import headingFont from "../assets/fonts/zen-maru-gothic-subset.woff2?url";
 import "../styles/tokens.css";
 import "../styles/base.css";
-import { SITE_URL, APP_STORE_ID } from "../config";
+import { SITE_URL, APP_STORE_ID, withBase } from "../config";
 import type { Copy } from "../i18n/ja";
 
 interface Props {
@@ -16,7 +16,7 @@ interface Props {
 
 const { copy, title = copy.meta.title, description = copy.meta.description, alternates, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE_URL).href;
-const ogImage = new URL(copy.meta.ogImage, SITE_URL).href;
+const ogImage = new URL(withBase(copy.meta.ogImage), SITE_URL).href;
 ---
 
 <!doctype html>
@@ -30,16 +30,16 @@ const ogImage = new URL(copy.meta.ogImage, SITE_URL).href;
     <meta name="robots" content={noindex ? "noindex" : "max-image-preview:large"} />
     {alternates && (
       <>
-        <link rel="alternate" hreflang="ja" href={new URL(alternates.ja, SITE_URL).href} />
-        <link rel="alternate" hreflang="en" href={new URL(alternates.en, SITE_URL).href} />
-        <link rel="alternate" hreflang="x-default" href={new URL(alternates.ja, SITE_URL).href} />
+        <link rel="alternate" hreflang="ja" href={new URL(withBase(alternates.ja), SITE_URL).href} />
+        <link rel="alternate" hreflang="en" href={new URL(withBase(alternates.en), SITE_URL).href} />
+        <link rel="alternate" hreflang="x-default" href={new URL(withBase(alternates.ja), SITE_URL).href} />
       </>
     )}
     <meta name="theme-color" content="#0f766e" />
     <meta name="apple-itunes-app" content={`app-id=${APP_STORE_ID}`} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" href={withBase("/favicon.svg")} type="image/svg+xml" />
+    <link rel="icon" href={withBase("/favicon-32.png")} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={withBase("/apple-touch-icon.png")} />
     <link rel="preload" href={headingFont} as="font" type="font/woff2" crossorigin />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={copy.siteName} />

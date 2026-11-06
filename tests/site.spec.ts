@@ -1,9 +1,10 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+import { withBase } from "../src/config";
 
 const pages = [
-  { path: "/", lang: "ja", other: "/en/", heading: "学校のおたよりを、" },
-  { path: "/en/", lang: "en", other: "/", heading: "Turn school handouts" },
+  { path: withBase("/"), lang: "ja", other: withBase("/en/"), heading: "学校のおたよりを、" },
+  { path: withBase("/en/"), lang: "en", other: withBase("/"), heading: "Turn school handouts" },
 ];
 
 for (const { path, lang, other, heading } of pages) {
@@ -92,13 +93,13 @@ for (const { path, lang, other, heading } of pages) {
 }
 
 test("legal pages aren't indexed before launch", async ({ page }) => {
-  await page.goto("/privacy/");
+  await page.goto(withBase("/privacy/"));
   await expect(page.locator("meta[name='robots']")).toHaveAttribute("content", "noindex");
 });
 
 for (const { path, heading } of [
-  { path: "/privacy/", heading: "プライバシーポリシー" },
-  { path: "/en/privacy/", heading: "Privacy Policy" },
+  { path: withBase("/privacy/"), heading: "プライバシーポリシー" },
+  { path: withBase("/en/privacy/"), heading: "Privacy Policy" },
 ]) {
   test(`${path} shows the app's privacy policy`, async ({ page }) => {
     await page.goto(path);

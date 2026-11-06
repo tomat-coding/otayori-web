@@ -1,5 +1,5 @@
 ---
-import { LINKS } from "../config";
+import { LINKS, withBase } from "../config";
 import type { Copy } from "../i18n/ja";
 
 interface Props {
@@ -13,8 +13,8 @@ const { footer } = Astro.props;
   <div class="bar">
     <span>{footer.copyright}</span>
     <nav aria-label={footer.label}>
-      <a href={footer.privacyHref}>{footer.privacy}</a>
-      <a href={footer.termsHref}>{footer.terms}</a>
+      <a href={withBase(footer.privacyHref)}>{footer.privacy}</a>
+      <a href={withBase(footer.termsHref)}>{footer.terms}</a>
       <a href={LINKS.contact}>{footer.contact}</a>
     </nav>
   </div>

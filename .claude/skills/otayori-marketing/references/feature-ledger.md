@@ -26,7 +26,7 @@ Each fact has a status:
 ## Name and brand
 
 - **The app is おたよりん, Otayorin in Latin script everywhere** (store-listing.md, app display names, Mac menu bar). The code, package and app ID stay `otayori`; the plan is おたよりプラス (the English terms call it "Otayori Plus"); the UI uses おたより as the ordinary word for a handout.
-- **This website uses おたよりん / Otayorin** since 2026-11-05. The domain is still a placeholder (`otayorin.example` in `src/config.ts`); planned domains are `otayorin.com`, `.jp`, `.app` (not confirmed registered).
+- **This website uses おたよりん / Otayorin** since 2026-11-05. Until a domain is bought it's published on GitHub Pages at `https://tomat-coding.github.io/otayori-web/` (`SITE_URL` and `BASE_PATH` in `src/config.ts`); planned domains are `otayorin.com`, `.jp`, `.app` (not confirmed registered).
 - **Store names (draft):** App Store ja 「おたよりん｜おたより・プリント管理カレンダー」, subtitle 「撮るだけで予定と持ち物を自動登録」. English: "Otayorin – Family School Assistant". Never write "home assistant" (an existing smart-home product).
 - **Tagline:** 「プリント、撮るだけ。」
 - **Store category:** Productivity, secondary Education. (The site's JSON-LD keeps `LifestyleApplication`; Google has no productivity value.)

@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../config";
 import type { Copy } from "../i18n/ja";
 import androidHome from "../assets/screens/android-home.png";
 import iosCalendar from "../assets/screens/ios-calendar.png";
@@ -94,7 +95,7 @@ const mock = reminders.mock;
       <div class="lock" role="img" aria-label={mock.label}>
         <div class="notification">
           <span class="app-icon" aria-hidden="true">
-            <img src="/favicon.svg" alt="" width="20" height="20" />
+            <img src={withBase("/favicon.svg")} alt="" width="20" height="20" />
           </span>
           <div>
             <p class="meta">
@@ -107,7 +108,7 @@ const mock = reminders.mock;
         </div>
         <div class="notification">
           <span class="app-icon" aria-hidden="true">
-            <img src="/favicon.svg" alt="" width="20" height="20" />
+            <img src={withBase("/favicon.svg")} alt="" width="20" height="20" />
           </span>
           <div>
             <p class="meta">

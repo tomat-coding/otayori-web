@@ -1,9 +1,10 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import { SITE_URL } from "./src/config.ts";
+import { BASE_PATH, SITE_URL } from "./src/config.ts";
 
 export default defineConfig({
   site: SITE_URL,
+  base: BASE_PATH,
   trailingSlash: "always",
   build: { inlineStylesheets: "never" },
   i18n: {
