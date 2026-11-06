@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://otayorin.example/sitemap-index.xml
+Sitemap: https://tomat-coding.github.io/otayori-web/sitemap-index.xml
