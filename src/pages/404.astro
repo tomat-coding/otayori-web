@@ -1,0 +1,39 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { ja } from "../i18n/ja";
+import Base from "../layouts/Base.astro";
+---
+
+<Base copy={ja} title={`ページが見つかりません | ${ja.siteName}`} noindex>
+  <Header copy={ja} />
+  <main id="main">
+    <h1>ページが見つかりません</h1>
+    <p>
+      <a href="/">トップページへ戻る</a>
+    </p>
+    <p lang="en">
+      <a href="/en/">Back to the home page</a>
+    </p>
+  </main>
+  <Footer footer={ja.footer} />
+</Base>
+
+<style>
+  main {
+    padding: 96px var(--gutter);
+    text-align: center;
+  }
+
+  h1 {
+    margin-block-end: 16px;
+    font-size: var(--text-h2);
+  }
+
+  a {
+    display: inline-block;
+    padding-block: 10px;
+    color: var(--teal-deep);
+    font-weight: 700;
+  }
+</style>

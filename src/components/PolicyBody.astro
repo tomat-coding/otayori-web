@@ -1,0 +1,57 @@
+---
+import type { Policy } from "../legal/policy";
+
+interface Props {
+  policy: Policy;
+}
+
+const { policy } = Astro.props;
+---
+
+<div class="policy">
+  {policy.updated && <p class="updated">{policy.updated}</p>}
+  {policy.blocks.map((block) => {
+    switch (block.kind) {
+      case "section":
+        return <h2>{block.text}</h2>;
+      case "subsection":
+        return <h3>{block.text}</h3>;
+      case "paragraph":
+        return <p>{block.parts.map((part) => (part.href ? <a href={part.href}>{part.text}</a> : part.text))}</p>;
+      case "list":
+        return (
+          <ul>
+            {block.items.map((item) => (
+              <li>{item.map((part) => (part.href ? <a href={part.href}>{part.text}</a> : part.text))}</li>
+            ))}
+          </ul>
+        );
+    }
+  })}
+</div>
+
+<style>
+  .policy {
+    overflow-wrap: anywhere;
+  }
+
+  .updated {
+    margin-block: 8px 24px;
+    color: var(--ink-soft);
+  }
+
+  h3 {
+    margin-block: 20px 6px;
+    font-size: 1.0625rem;
+  }
+
+  p + p,
+  ul + p,
+  p + ul {
+    margin-block-start: 10px;
+  }
+
+  a {
+    color: var(--teal-deep);
+  }
+</style>

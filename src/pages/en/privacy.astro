@@ -1,0 +1,14 @@
+---
+import LegalPage from "../../components/LegalPage.astro";
+import PolicyBody from "../../components/PolicyBody.astro";
+import { en } from "../../i18n/en";
+import { parsePolicy } from "../../legal/policy";
+import text from "../../legal/privacy_policy_en.txt?raw";
+
+// The app's own policy, copied by scripts/sync-legal.mjs.
+const policy = parsePolicy(text);
+---
+
+<LegalPage copy={en} title={policy.title} alternates={{ ja: "/privacy/", en: "/en/privacy/" }}>
+  <PolicyBody policy={policy} />
+</LegalPage>

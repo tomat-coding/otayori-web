@@ -1,0 +1,59 @@
+---
+import { LINKS } from "../config";
+import type { Copy } from "../i18n/ja";
+
+interface Props {
+  footer: Copy["footer"];
+}
+
+const { footer } = Astro.props;
+---
+
+<footer>
+  <div class="bar">
+    <span>{footer.copyright}</span>
+    <nav aria-label={footer.label}>
+      <a href={footer.privacyHref}>{footer.privacy}</a>
+      <a href={footer.termsHref}>{footer.terms}</a>
+      <a href={LINKS.contact}>{footer.contact}</a>
+    </nav>
+  </div>
+  <p class="trademarks">{footer.trademarks}</p>
+</footer>
+
+<style>
+  footer {
+    background: var(--bezel);
+    color: #e6dfd5;
+    font-size: 0.875rem;
+  }
+
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 24px;
+    align-items: center;
+    justify-content: space-between;
+    max-inline-size: var(--page-wide);
+    margin-inline: auto;
+    padding: 20px var(--gutter);
+  }
+
+  .trademarks {
+    max-inline-size: var(--page-wide);
+    margin-inline: auto;
+    padding: 0 var(--gutter) 20px;
+    font-size: 0.75rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+  }
+
+  a {
+    display: inline-block;
+    padding-block: 12px;
+  }
+</style>

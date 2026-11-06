@@ -1,0 +1,184 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  /** Anchor for links from elsewhere on the page. */
+  id?: string;
+  title: string;
+  body: string;
+  bullets?: string[];
+  note?: string;
+  platforms: string[];
+  /** Colour of the media block or icon. */
+  tone: "coral" | "sky" | "amber" | "teal";
+  icon?: string;
+  /** Shown when the feature may move to the paid plan; links to the early-access section. */
+  paid?: { label: string; href: string };
+  /** `crop`: a phone cut off at the tile's bottom edge. `panel`: media inside the colour block. */
+  media?: "crop" | "panel";
+  /** `wide`: text and media side by side on wide screens, for a tile that spans the whole grid. */
+  layout?: "stack" | "wide";
+}
+
+const { id, title, body, bullets, note, platforms, tone, icon, paid, media = "panel", layout = "stack" } = Astro.props;
+const hasMedia = Astro.slots.has("default");
+---
+
+<article id={id} class:list={["tile", tone, layout, { "has-media": hasMedia }]}>
+  <div class="text">
+    {icon && (
+      <span class="icon">
+        <Icon name={icon} />
+      </span>
+    )}
+    <h3>{title}</h3>
+    <p class="platforms">
+      {platforms.map((platform) => (
+        <span class="chip">{platform}</span>
+      ))}
+    </p>
+    <p class="body">{body}</p>
+    {bullets && (
+      <ul class="check-list">
+        {bullets.map((bullet) => (
+          <li>
+            <Icon name="check" size={18} />
+            {bullet}
+          </li>
+        ))}
+      </ul>
+    )}
+    {note && <p class="note">{note}</p>}
+    {paid && (
+      <p class="paid">
+        <a class="chip chip-paid" href={paid.href}>
+          <Icon name="plus" size={14} />
+          {paid.label}
+        </a>
+      </p>
+    )}
+  </div>
+  {hasMedia && (
+    <div class:list={["media", media]}>
+      <slot />
+    </div>
+  )}
+</article>
+
+<style>
+  .tile {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-large);
+    background: var(--surface);
+  }
+
+  .coral {
+    --tone: var(--coral-soft);
+    --tone-ink: var(--coral-ink);
+  }
+
+  .sky {
+    --tone: var(--sky-soft);
+    --tone-ink: #1f4f7a;
+  }
+
+  .amber {
+    --tone: var(--amber-soft);
+    --tone-ink: var(--amber-ink);
+  }
+
+  .teal {
+    --tone: var(--teal-soft);
+    --tone-ink: var(--teal-deep);
+  }
+
+  .text {
+    padding: clamp(22px, 3vw, 32px);
+  }
+
+  .icon {
+    display: grid;
+    place-items: center;
+    inline-size: 48px;
+    block-size: 48px;
+    margin-block-end: 16px;
+    border-radius: 16px;
+    background: var(--tone);
+    color: var(--tone-ink);
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.3125rem, 1.1rem + 0.7vw, 1.625rem);
+    line-height: 1.45;
+  }
+
+  .platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-block-start: 10px;
+  }
+
+  .body {
+    margin-block-start: 12px;
+    color: var(--ink-soft);
+  }
+
+  .paid {
+    margin-block-start: 14px;
+  }
+
+  .media {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: auto clamp(12px, 2vw, 20px) clamp(12px, 2vw, 20px);
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--tone);
+  }
+
+  /* A phone standing in the colour block, cut off at the bottom edge. */
+  .crop {
+    block-size: clamp(260px, 28vw, 340px);
+    padding-block-start: 28px;
+  }
+
+  .crop > :global(*) {
+    inline-size: min(240px, 66%);
+  }
+
+  .crop::after {
+    position: absolute;
+    inset: auto 0 0;
+    block-size: 48px;
+    background: linear-gradient(transparent, var(--tone));
+    content: "";
+  }
+
+  .panel {
+    flex-direction: column;
+    gap: 12px;
+    padding: clamp(16px, 2.5vw, 28px);
+  }
+
+  @media (width >= 860px) {
+    .wide {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .wide .text {
+      flex: 1 1 0;
+    }
+
+    .wide .media {
+      flex: 1 1 0;
+      margin: 20px;
+    }
+  }
+</style>

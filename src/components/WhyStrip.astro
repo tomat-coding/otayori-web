@@ -1,0 +1,90 @@
+---
+import type { Copy } from "../i18n/ja";
+import Icon from "./Icon.astro";
+
+interface Props {
+  why: Copy["why"];
+}
+
+const { why } = Astro.props;
+---
+
+<section id="why" class="page" aria-labelledby="why-title">
+  <h2 id="why-title" class="visually-hidden">
+    {why.title}
+  </h2>
+  <ul>
+    {why.items.map((item) => (
+      <li>
+        <span class="icon">
+          <Icon name={item.icon} />
+        </span>
+        <div>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  section {
+    padding-block-start: clamp(40px, 5vw, 64px);
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: 14px;
+  }
+
+  /* Icon on top, so the text gets the card's full width and the four cards read alike. */
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .icon {
+    display: grid;
+    place-items: center;
+    inline-size: 48px;
+    block-size: 48px;
+    border-radius: 14px;
+    background: var(--teal-soft);
+    color: var(--teal-deep);
+  }
+
+  li:nth-child(2) .icon {
+    background: var(--amber-soft);
+    color: var(--amber-ink);
+  }
+
+  li:nth-child(3) .icon {
+    background: var(--coral-soft);
+    color: var(--coral-ink);
+  }
+
+  li:nth-child(4) .icon {
+    background: var(--sky-soft);
+    color: #1f4f7a;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1875rem;
+    line-height: 1.45;
+  }
+
+  p {
+    margin-block-start: 6px;
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.75;
+  }
+</style>

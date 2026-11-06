@@ -1,0 +1,42 @@
+/* Colours match the app's design tokens (OtayoriColors). */
+:root {
+  --ground: #fbf7f1;
+  --surface: #fff;
+  --ink: #2a2724;
+  --ink-soft: #4a433b;
+  --muted: #5c554d;
+  --line: #ebe3d8;
+  --bezel: #17120e;
+
+  --teal: #0f766e;
+  --teal-deep: #0b5a53;
+  --teal-soft: #dcefea;
+  --teal-ring: #1b8a81;
+  --on-teal-soft: #eaf6f3;
+  --coral: #e2573a;
+  --coral-soft: #fdece6;
+  --coral-ink: #a8381c;
+  --amber: #e7a33b;
+  --amber-soft: #ffefc9;
+  --amber-ink: #6b3e00;
+  --sky-soft: #d3e5f5;
+
+  --font-body:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Noto Sans CJK JP", "Yu Gothic UI", "Meiryo",
+    system-ui, sans-serif;
+  --font-heading: "Zen Maru Gothic", var(--font-body);
+
+  --text-lead: clamp(1.0625rem, 0.98rem + 0.4vw, 1.25rem);
+  --text-h1: clamp(1.875rem, 0.85rem + 4.9vw, 4.5rem);
+  --text-h2: clamp(1.75rem, 1.2rem + 2.4vw, 3.125rem);
+  --text-h2-small: clamp(1.625rem, 1.3rem + 1.4vw, 2.375rem);
+
+  --gutter: 20px;
+  --section: clamp(56px, 7vw, 96px);
+  --page: 1100px;
+  --page-wide: 1200px;
+  --radius: 20px;
+  --radius-large: 24px;
+  --shadow: 0 14px 34px rgb(42 39 36 / 16%);
+  --shadow-phone: 0 20px 44px rgb(42 39 36 / 24%);
+}

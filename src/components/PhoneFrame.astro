@@ -1,0 +1,47 @@
+---
+import type { ImageMetadata } from "astro";
+import Screen from "./Screen.astro";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  sizes: string;
+  kind?: "ios" | "android";
+  priority?: boolean;
+}
+
+const { src, alt, sizes, kind = "ios", priority = false } = Astro.props;
+---
+
+<div class:list={["phone", kind]}>
+  <Screen src={src} alt={alt} widths={[280, 420, 560, 840]} sizes={sizes} priority={priority} />
+</div>
+
+<style>
+  .phone {
+    --pad: clamp(3px, 0.7vw, 8px);
+    padding: var(--pad);
+    background: var(--bezel);
+    box-shadow: var(--shadow-phone);
+  }
+
+  .ios {
+    border-radius: clamp(16px, 3.2vw, 40px);
+  }
+
+  .android {
+    border-radius: clamp(12px, 2.2vw, 26px);
+  }
+
+  .phone :global(img) {
+    inline-size: 100%;
+  }
+
+  .ios :global(img) {
+    border-radius: clamp(13px, 2.6vw, 32px);
+  }
+
+  .android :global(img) {
+    border-radius: clamp(10px, 1.7vw, 19px);
+  }
+</style>

@@ -1,0 +1,172 @@
+---
+import type { Copy } from "../i18n/ja";
+import Icon from "./Icon.astro";
+
+interface Props {
+  useCases: Copy["useCases"];
+}
+
+const { useCases } = Astro.props;
+const tones = ["coral", "sky", "teal", "amber"];
+---
+
+<section id="use-cases" class="page" aria-labelledby="cases-title">
+  <h2 id="cases-title" class="section-title">
+    {useCases.title}
+  </h2>
+  <p class="section-lead">{useCases.lead}</p>
+  <div class="grid">
+    {useCases.items.map((item, index) => (
+      <article class={tones[index % tones.length]}>
+        <p class="top">
+          <span class="icon">
+            <Icon name={item.icon} />
+          </span>
+          <span class="tag">{item.tag}</span>
+        </p>
+        <div class="head">
+          <h3>{item.title}</h3>
+          <p class="problem">{item.problem}</p>
+        </div>
+        <div class="solution">
+          <p class="label">
+            <img src="/favicon.svg" alt="" width="20" height="20" />
+            {useCases.solutionLabel}
+          </p>
+          <ul class="check-list">
+            {item.bullets.map((bullet) => (
+              <li>
+                <Icon name="check" size={18} />
+                {bullet}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <a class="more" href={item.link.href}>
+          {item.link.label}
+          <Icon name="arrow" size={18} />
+        </a>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  section {
+    padding-block-start: var(--section);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    gap: 16px;
+    margin-block-start: 36px;
+  }
+
+  .coral {
+    --tone: var(--coral-soft);
+    --tone-ink: var(--coral-ink);
+  }
+
+  .sky {
+    --tone: var(--sky-soft);
+    --tone-ink: #1f4f7a;
+  }
+
+  .teal {
+    --tone: var(--teal-soft);
+    --tone-ink: var(--teal-deep);
+  }
+
+  .amber {
+    --tone: var(--amber-soft);
+    --tone-ink: var(--amber-ink);
+  }
+
+  /*
+   * Cards in a row are the same height (the grid stretches them). Inside, the text runs straight on, and the
+   * "With Otayorin" box takes up any spare height, so the boxes and links line up without gaps in the text.
+   */
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: clamp(22px, 3vw, 30px);
+    border-radius: var(--radius-large);
+    background: var(--tone);
+  }
+
+  .top {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .icon {
+    display: grid;
+    flex: none;
+    place-items: center;
+    inline-size: 44px;
+    block-size: 44px;
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--tone-ink);
+  }
+
+  .tag {
+    padding: 2px 12px;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 70%);
+    color: var(--tone-ink);
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  .head {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.4375rem);
+    line-height: 1.5;
+  }
+
+  .problem {
+    color: var(--ink-soft);
+  }
+
+  .solution {
+    flex: 1 0 auto;
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    background: rgb(255 255 255 / 75%);
+  }
+
+  .label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--teal-deep);
+    font-size: 0.9375rem;
+    font-weight: 700;
+  }
+
+  .solution .check-list {
+    margin-block-start: 8px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .more {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    align-self: flex-start;
+    padding-block: 8px;
+    color: var(--tone-ink);
+    font-weight: 700;
+  }
+</style>

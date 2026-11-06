@@ -1,0 +1,174 @@
+---
+import { LINKS } from "../config";
+import type { Copy } from "../i18n/ja";
+import desktopCalendar from "../assets/screens/desktop-calendar.png";
+import Icon from "./Icon.astro";
+import Screen from "./Screen.astro";
+
+interface Props {
+  copy: Copy;
+}
+
+const { copy } = Astro.props;
+const { devices } = copy;
+---
+
+<section id="devices" aria-labelledby="devices-title">
+  <div class="page">
+    <h2 id="devices-title" class="section-title">
+      {devices.title}
+    </h2>
+    <p class="section-lead">{devices.lead}</p>
+
+    <div class="mac">
+      <div class="laptop">
+        <div class="lid">
+          <Screen
+            src={desktopCalendar}
+            alt={devices.mac.alt}
+            widths={[640, 960, 1440]}
+            sizes="(min-width: 1100px) 620px, (min-width: 860px) 56vw, 92vw"
+          />
+        </div>
+        <div class="base" aria-hidden="true"></div>
+      </div>
+      <div class="mac-text">
+        <h3>{devices.mac.title}</h3>
+        <p class="platforms">
+          <span class="chip">Mac</span>
+          <span class="chip">macOS 14+</span>
+        </p>
+        <p class="body">{devices.mac.body}</p>
+        <p class="actions">
+          <a class="download" href={LINKS.macDownload}>
+            {copy.badges.mac}
+          </a>
+          <a class="chip chip-paid" href="#early-access">
+            <Icon name="plus" size={14} />
+            {copy.features.paidChip}
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <ul class="needs" aria-label={devices.needsLabel}>
+      {devices.needs.map((need) => (
+        <li>{need}</li>
+      ))}
+    </ul>
+    <p class="caption">{devices.caption}</p>
+  </div>
+</section>
+
+<style>
+  section {
+    padding-block: var(--section);
+    border-block: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .mac {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 48px;
+    align-items: center;
+    margin-block-start: 40px;
+  }
+
+  .laptop {
+    flex: 1.4 1 420px;
+    min-inline-size: 0;
+    padding-inline: 4%;
+  }
+
+  .lid {
+    padding: clamp(4px, 0.8vw, 10px);
+    border-radius: clamp(8px, 1.4vw, 16px) clamp(8px, 1.4vw, 16px) 0 0;
+    background: var(--bezel);
+    box-shadow: var(--shadow-phone);
+  }
+
+  .lid :global(img) {
+    inline-size: 100%;
+    border-radius: clamp(3px, 0.6vw, 6px);
+  }
+
+  .base {
+    block-size: clamp(6px, 1.1vw, 14px);
+    margin-inline: -5%;
+    border-radius: 0 0 clamp(6px, 1.2vw, 14px) clamp(6px, 1.2vw, 14px);
+    background: #3a342e;
+  }
+
+  .mac-text {
+    flex: 1 1 300px;
+    min-inline-size: 0;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2-small);
+    line-height: 1.4;
+  }
+
+  .platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-block-start: 10px;
+  }
+
+  .body {
+    margin-block-start: 12px;
+    color: var(--ink-soft);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: center;
+    margin-block-start: 16px;
+  }
+
+  .download {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 44px;
+    padding-inline: 20px;
+    border-radius: 999px;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .download:hover {
+    background: var(--teal-deep);
+  }
+
+  .needs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-block-start: clamp(36px, 5vw, 56px);
+  }
+
+  .needs li {
+    padding: 6px 16px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--ground);
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+    font-weight: 700;
+  }
+
+  .caption {
+    margin-block-start: 16px;
+    color: var(--muted);
+    font-size: 0.875rem;
+    text-align: center;
+  }
+</style>

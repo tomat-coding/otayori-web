@@ -1,0 +1,99 @@
+---
+import { LINKS } from "../config";
+import type { Copy } from "../i18n/ja";
+import StoreBadges from "./StoreBadges.astro";
+
+interface Props {
+  copy: Copy;
+}
+
+const { copy } = Astro.props;
+---
+
+<section id="get-the-app" aria-labelledby="cta-title">
+  <div class="panel">
+    <div class="ring" aria-hidden="true"></div>
+    <p class="kicker">{copy.hero.kicker}</p>
+    <h2 id="cta-title">{copy.getApp.title}</h2>
+    <StoreBadges badges={copy.badges} lang={copy.lang} center />
+    <p class="mac">
+      <a href={LINKS.macDownload}>{copy.badges.mac}</a>
+    </p>
+    <p class="early">
+      {copy.getApp.early}
+      <a href="#early-access">{copy.getApp.earlyLink}</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  section {
+    max-inline-size: var(--page-wide);
+    margin-inline: auto;
+    padding: 0 var(--gutter) clamp(48px, 6vw, 80px);
+  }
+
+  .panel {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(36px, 6vw, 72px) clamp(20px, 5vw, 64px);
+    border-radius: 28px;
+    background: var(--teal);
+    color: #fff;
+    text-align: center;
+  }
+
+  .ring {
+    position: absolute;
+    inset-block-end: -120px;
+    inset-inline-end: -80px;
+    inline-size: 280px;
+    block-size: 280px;
+    border: 44px solid var(--teal-ring);
+    border-radius: 50%;
+  }
+
+  .kicker,
+  h2,
+  .mac,
+  .early,
+  .panel > :global(.badges) {
+    position: relative;
+  }
+
+  .kicker {
+    color: var(--on-teal-soft);
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    margin-block: 8px 28px;
+    font-size: clamp(1.75rem, 1.2rem + 2.2vw, 3rem);
+  }
+
+  .mac {
+    margin-block-start: 12px;
+  }
+
+  .mac a {
+    display: inline-block;
+    padding-block: 10px;
+    font-weight: 700;
+  }
+
+  .early {
+    margin-block-start: 8px;
+    color: var(--on-teal-soft);
+    font-size: 0.9375rem;
+  }
+
+  .early a {
+    display: inline-block;
+    padding-block: 6px;
+    margin-inline-start: 4px;
+    color: #fff;
+    font-weight: 700;
+  }
+</style>

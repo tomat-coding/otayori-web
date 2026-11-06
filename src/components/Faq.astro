@@ -1,0 +1,55 @@
+---
+import type { Copy } from "../i18n/ja";
+
+interface Props {
+  faq: Copy["faq"];
+}
+
+const { faq } = Astro.props;
+---
+
+<section id="faq" aria-labelledby="faq-title">
+  <h2 id="faq-title" class="section-title">
+    {faq.title}
+  </h2>
+  <div class="list">
+    {faq.items.map((item, index) => (
+      <details open={index === 0}>
+        <summary>{item.q}</summary>
+        <p>{item.a}</p>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  section {
+    max-inline-size: 820px;
+    margin-inline: auto;
+    padding: var(--section) var(--gutter);
+  }
+
+  .list {
+    display: grid;
+    gap: 10px;
+    margin-block-start: 28px;
+  }
+
+  details {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+  }
+
+  summary {
+    min-block-size: 44px;
+    padding: 12px 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  p {
+    padding: 0 18px 16px;
+    color: var(--ink-soft);
+  }
+</style>

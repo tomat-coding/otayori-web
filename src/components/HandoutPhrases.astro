@@ -1,0 +1,198 @@
+---
+import type { Copy } from "../i18n/ja";
+import iosVertical from "../assets/screens/ios-vertical.png";
+import Icon from "./Icon.astro";
+import PhoneFrame from "./PhoneFrame.astro";
+
+interface Props {
+  phrases: Copy["phrases"];
+}
+
+const { phrases } = Astro.props;
+---
+
+<section id="reading" aria-labelledby="reading-title">
+  <div class="page">
+    <h2 id="reading-title" class="section-title">
+      {phrases.title}
+    </h2>
+    <p class="section-lead">{phrases.lead}</p>
+
+    <div class="table">
+      <div class="head" aria-hidden="true">
+        <span>{phrases.paperLabel}</span>
+        <span>{phrases.appLabel}</span>
+      </div>
+      <dl>
+        {phrases.items.map((item) => (
+          <div class="pair">
+            <dt>
+              <span class="visually-hidden">{phrases.paperLabel}: </span>
+              <span class="phrase" lang="ja">
+                「{item.phrase}」
+              </span>
+              {item.gloss && <span class="gloss">{item.gloss}</span>}
+            </dt>
+            <dd>
+              <Icon name="arrow" size={20} class="arrow" />
+              <span class="visually-hidden">{phrases.appLabel}: </span>
+              <span class="kind">{item.kind}</span>
+              <span class="result">{item.result}</span>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <div class="also">
+      <div class="phone">
+        <PhoneFrame src={iosVertical} alt={phrases.alt} sizes="(min-width: 640px) 240px, 62vw" />
+      </div>
+      <div class="also-text">
+        <h3>{phrases.alsoTitle}</h3>
+        <ul class="check-list">
+          {phrases.also.map((line) => (
+            <li>
+              <Icon name="check" size={18} />
+              {line}
+            </li>
+          ))}
+        </ul>
+        <p class="note">{phrases.note}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    margin-block-start: var(--section);
+    padding-block: var(--section);
+    border-block: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .table {
+    max-inline-size: 960px;
+    margin: 40px auto 0;
+  }
+
+  .head {
+    display: none;
+  }
+
+  dl {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+  }
+
+  .pair {
+    display: grid;
+    gap: 10px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--ground);
+  }
+
+  dt {
+    display: grid;
+    gap: 2px;
+  }
+
+  .phrase {
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  .gloss {
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  dd {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  dd :global(.arrow) {
+    flex: none;
+    color: var(--coral);
+    transform: rotate(90deg);
+  }
+
+  .kind {
+    padding: 2px 12px;
+    border-radius: 10px;
+    background: var(--teal);
+    color: #fff;
+    font-size: 0.9375rem;
+    font-weight: 700;
+  }
+
+  .result {
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+
+  @media (width >= 760px) {
+    .head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      padding: 0 20px 10px;
+      color: var(--muted);
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    .pair {
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 16px 20px;
+    }
+
+    dd {
+      position: relative;
+    }
+
+    dd :global(.arrow) {
+      position: absolute;
+      inset-block-start: 50%;
+      inset-inline-start: -34px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .also {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 56px;
+    align-items: center;
+    justify-content: center;
+    max-inline-size: 960px;
+    margin: clamp(40px, 5vw, 64px) auto 0;
+  }
+
+  .phone {
+    flex: none;
+    inline-size: min(240px, 62vw);
+  }
+
+  .also-text {
+    flex: 1 1 320px;
+    min-inline-size: 0;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2-small);
+    line-height: 1.4;
+  }
+</style>

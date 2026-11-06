@@ -1,0 +1,113 @@
+Otayorin Privacy Policy
+
+Last updated: November 5, 2026
+
+1. Our approach
+Otayorin (the iPhone, Android and Mac apps and the servers behind them; "the app") helps you photograph or import handouts from school or nursery and keep track of the dates, things to bring and forms to hand in.
+While you use the app without signing in, its information is stored only on your device and is not sent to any server (except Android's diagnostic information; see section 5). Only when you sign in is the information in section 3 stored on our servers, so that your other devices signed in to the same account (phones and computers), and your family, see the same schedule.
+
+2. Information kept only on your device
+- Photos of handouts you take or import (except those you choose to share), and the text read from them
+- Your children's names and classes, and your dates, things to bring, forms and payments (until you sign in)
+- Reminder settings and times, and a copy of upcoming items for widgets
+- Questions to the AI assistant and its answers (gone when the app closes or you sign out), and the number of questions
+
+3. Information stored on our servers
+(1) If you sign in
+- The email address and identifier we receive from the Apple or Google account you sign in with (with Google, also your name and profile picture), and a user ID that tells users apart. We never receive a password
+- Sign-in times and access records (IP address, date and time, and so on)
+- On iPhone: the device's notification identifier (push token). Signing out deletes it
+- When you sign in on a computer by scanning its QR code with your phone: the computer's name, shown on your phone to confirm. It is deleted once you are signed in, and unused ones within a few minutes
+(2) Your schedule and family, once you sign in (shown on your devices signed in to the account and to your family's members)
+- Your display name in the family (at first, the name of the account you signed in with), your family's members, and invite codes (creator, expiry and use)
+- Your children's names, classes and display colours
+- Your dates, things to bring, forms and payments (title, date and time, place, notes, checklist, amount, payment method and repeat settings), and who ticked or completed them
+(3) If you share a handout with your family
+- That handout's photo and thumbnail (every page), title, school, date and page count, and a record of how many you shared
+- This applies only to handouts where you turn on "Share this handout with your family", which is off by default. The full text read from a handout is not sent
+(4) If you use Otayori Plus (the paid plan)
+- Your plan and a record of the purchase (store, product, the store's transaction ID, expiry and status)
+- We never receive your payment details, such as card numbers
+
+4. Why it is used
+Information is used only to:
+- Show your schedule, send reminders, add events to your calendar, and read and search handouts
+- Sign you in and confirm it is you
+- Keep your devices signed in to the same account in step, share with your family, notify your partner and let you use the app on a computer
+- Provide the paid plan and confirm purchases
+- Prevent misuse and excessive load, deal with faults and answer enquiries
+- Tell you about important matters such as changes to this policy or the Terms of Use
+It is never used for advertising, marketing or training AI.
+
+5. Processing on your device, and diagnostics sent to Google
+Text recognition (OCR) and the AI assistant run on your device. Your photos, the recognised text, your questions and the answers are never sent for this processing. iPhone and Mac use Apple's on-device features.
+On Android, text recognition and the AI assistant (on phones that support it) use Google's ML Kit. ML Kit sends Google the following information, encrypted, for diagnostics and usage analytics. This cannot be turned off and happens even when you are not signed in.
+- Device manufacturer, model and OS version
+- App name and version
+- A per-installation identifier (not intended to identify you or your device)
+- If you use the AI assistant: user, device or other identifiers, and the device's configured languages
+- Performance information such as processing time, settings, image and input/output sizes and error types
+We do not receive this information. Google states that it does not pass it to third parties. For details, see Google's disclosure (https://developers.google.com/ml-kit/android-data-disclosure).
+Apart from this, the app uses no analytics, advertising, tracking or crash-reporting tools.
+
+6. Service providers and outside services
+The app uses the following services.
+- Supabase, Inc. (USA): we entrust it with accounts, the database, photo storage and sync. Data is stored on servers in Japan (Tokyo)
+- Apple Inc. (USA): Sign in with Apple, partner notifications on iPhone (your display name and a count, delivered through Apple's notification service) and confirming App Store purchases. When an account that signed in with Apple is deleted, a one-time code from Apple's own screen is sent to Apple to end the sign-in connection
+- Google LLC (USA): Google sign-in, confirming Google Play purchases and the diagnostics in section 5
+Apple's and Google's own privacy policies also apply to their services.
+
+7. Providing information to businesses outside Japan
+Supabase, Inc., Apple Inc. and Google LLC are businesses in the United States. Even when data is stored in Japan, they may handle it from the United States. By signing in, you agree to these businesses handling the information in section 3. If you do not agree, please use the app without signing in.
+The United States has no comprehensive federal law equivalent to Japan's Act on the Protection of Personal Information; it has federal laws for particular sectors and state laws. Government agencies may also require information under the law. For details of the system, see the materials published by Japan's Personal Information Protection Commission (https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/).
+We have a data processing agreement with Supabase, Inc. and have chosen servers in Japan. We will give you the necessary information on request.
+
+8. Providing information to third parties
+We never sell your information. We do not provide it to third parties without your consent, except:
+- Where the law allows it, such as when required by law, or when needed to protect someone's life, health or property and consent is hard to obtain
+- The service providers and outside services in sections 6 and 7
+Information you share with your family can be seen by the members of the same family (sharing group). Give invite codes and invite links only to people you trust.
+
+9. Security
+- Connections are encrypted (TLS), and data on the servers is stored encrypted
+- The database and photos have access controls per family (sharing group), so other users cannot see them
+- Sign-in details are protected in the device's secure storage (the iPhone Keychain, Android Keystore or the Mac Keychain)
+- Photos and schedules are stored encrypted on our servers, but this is not end-to-end encryption. We do not look at their contents except when necessary, such as to deal with a fault or when required by law
+- We check the system in the United States and supervise our providers as needed through our agreements
+
+10. Device features
+- Camera: only when you choose "Take a photo". On Android, the photo is taken with your camera app and Otayorin has no camera permission.
+- Photos and files: only the photos and files you pick, files shared from another app, and files you drop on the Mac are read. The app has no access to your whole photo library.
+- Notifications: permission is asked when you turn on a reminder. Reminders are set on the device, and lock screens don't show your children's names. On iPhone, while you share with your family, you can receive your partner's updates ("Papa added 3 items"). These notices never include titles or children's names.
+- Calendar: an event is added only when you save it yourself in the screen opened by "Add to calendar" (the iOS screen, your Android calendar app, or a file opened on the Mac). The app never reads your calendar.
+- Widgets (iPhone): a copy of the next 30 days' items is kept where only the app and its widgets can read it. Lock screen widgets don't show your children's names.
+- AI assistant ("Ask about your handouts"): your device's built-in AI (Apple Intelligence on iPhone and Mac, Gemini Nano on supported Android phones) makes the answers. For the diagnostics on Android, see section 5.
+
+11. Backups
+iPhone: the app's data may be included in your iPhone backups (iCloud or a computer). These are your own backups; we cannot see them.
+Android: the app's data is not included in Google Drive backups. It moves to a new phone when you transfer directly from device to device.
+
+12. How long information is kept, and deleting it
+On your device: "Delete all data" in Settings removes everything the app has stored on your device. Deleting the app also removes its data from your device.
+On our servers, information is kept while your account exists or your family (sharing group) continues.
+- You can delete your account at any time from "Account" on the Family screen, or with "Delete account and all data" in Settings. This deletes your account information, notification identifier and purchase records, and removes the record of who wrote or ticked the items that stay with your family. Your other devices signed in to the account are signed out within a few minutes; the computer app also deletes the data on it then.
+- When the last member leaves, that family's schedule, children's information and photos are deleted from the server. If other members remain, the items and handouts you shared stay for them.
+- When you delete an item, a child or a checklist line in the app, its content (title, notes, name and so on) is removed at once. Only a marker stays, so your other devices learn of the deletion; it is removed when the family is deleted.
+- Turning off sharing for a handout deletes its photo, title and school from the server.
+- "Delete all data on this device" leaves your account and anything shared with your family on the server. Data on your other devices has to be deleted on those devices.
+- Information in server backups and access records disappears automatically after a period of time. Information the law requires us to keep is kept for that period.
+
+13. Your requests
+You can ask us to tell you the purpose of use of your information, and to disclose, correct, add to, delete or stop using it, stop providing it to third parties, or disclose records of such provision. You can do much of this yourself in the app. For anything else, email the contact in section 14. We will confirm that you are the person concerned and respond without delay as the law requires. We currently charge no fee.
+The same contact takes complaints and questions about how information is handled.
+
+14. Operator and contact
+Operator: Tomasz Matusik
+Email: tomat.firma@gmail.com
+The operator's address will be provided without delay on request.
+
+15. Children's information
+The app is for parents and guardians, and is not intended to be used by children themselves. Your children's information is treated as information managed by you, and is handled only as far as you enter or share it.
+
+16. Changes
+If the way information is handled changes, this policy will be updated. The app will tell you about important changes and, where needed, ask for your consent again.

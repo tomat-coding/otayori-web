@@ -1,0 +1,91 @@
+---
+import type { Copy } from "../i18n/ja";
+import Icon from "./Icon.astro";
+
+interface Props {
+  trust: Copy["trust"];
+  privacyHref: string;
+}
+
+const { trust, privacyHref } = Astro.props;
+---
+
+<section id="privacy" class="page" aria-labelledby="privacy-title">
+  <h2 id="privacy-title" class="section-title">
+    {trust.title}
+  </h2>
+  <p class="section-lead">{trust.lead}</p>
+  <ul>
+    {trust.items.map((item) => (
+      <li>
+        <span class="icon">
+          <Icon name={item.icon} />
+        </span>
+        <h3>{item.title}</h3>
+        <p>{item.body}</p>
+      </li>
+    ))}
+  </ul>
+  <p class="more">
+    <a href={privacyHref}>
+      {trust.link}
+      <Icon name="arrow" size={18} />
+    </a>
+  </p>
+</section>
+
+<style>
+  section {
+    padding-block-start: var(--section);
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    gap: 16px;
+    margin-block-start: 36px;
+  }
+
+  li {
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .icon {
+    display: grid;
+    place-items: center;
+    inline-size: 44px;
+    block-size: 44px;
+    margin-block-end: 14px;
+    border-radius: 50%;
+    background: var(--teal-soft);
+    color: var(--teal-deep);
+  }
+
+  h3 {
+    font-size: 1.1875rem;
+    line-height: 1.5;
+  }
+
+  li p {
+    margin-block-start: 6px;
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+  }
+
+  .more {
+    margin-block-start: 20px;
+    text-align: center;
+  }
+
+  .more a {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    padding-block: 10px;
+    color: var(--teal-deep);
+    font-weight: 700;
+  }
+</style>

@@ -1,0 +1,248 @@
+---
+import type { Copy } from "../i18n/ja";
+import iosHome from "../assets/screens/ios-home.png";
+import iosReview from "../assets/screens/ios-review.png";
+import PhoneFrame from "./PhoneFrame.astro";
+
+interface Props {
+  steps: Copy["steps"];
+}
+
+const { steps } = Astro.props;
+const [snap, check, done] = steps.items;
+const phoneSizes = "(min-width: 1100px) 220px, (min-width: 640px) 22vw, 60vw";
+---
+
+<section id="how-it-works" class="page" aria-labelledby="how-title">
+  <h2 id="how-title" class="section-title">
+    {steps.title}
+  </h2>
+  <p class="section-lead">{steps.lead}</p>
+  <ol>
+    <li class="coral">
+      <div class="visual">
+        <div class="scan">
+          <span class="corner top-left" aria-hidden="true"></span>
+          <span class="corner top-right" aria-hidden="true"></span>
+          <span class="corner bottom-left" aria-hidden="true"></span>
+          <span class="corner bottom-right" aria-hidden="true"></span>
+          <div class="paper" role="img" aria-label={steps.paper.label} lang="ja">
+            <p class="paper-title">{steps.paper.title}</p>
+            <p class="paper-intro">{steps.paper.intro}</p>
+            {steps.paper.lines.map((line) => (
+              <p>
+                <span class="marked">{line}</span>
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="text">
+        <h3>
+          <span class="number" aria-hidden="true">
+            1
+          </span>
+          {snap.title}
+        </h3>
+        <p>{snap.body}</p>
+      </div>
+    </li>
+    <li class="amber">
+      <div class="visual crop">
+        <div class="phone">
+          <PhoneFrame src={iosReview} alt={steps.alts.review} sizes={phoneSizes} />
+        </div>
+      </div>
+      <div class="text">
+        <h3>
+          <span class="number" aria-hidden="true">
+            2
+          </span>
+          {check.title}
+        </h3>
+        <p>{check.body}</p>
+      </div>
+    </li>
+    <li class="teal">
+      <div class="visual crop">
+        <div class="phone">
+          <PhoneFrame src={iosHome} alt={steps.alts.home} sizes={phoneSizes} />
+        </div>
+      </div>
+      <div class="text">
+        <h3>
+          <span class="number" aria-hidden="true">
+            3
+          </span>
+          {done.title}
+        </h3>
+        <p>{done.body}</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<style>
+  section {
+    padding-block-start: var(--section);
+  }
+
+  ol {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 32px 24px;
+    margin-block-start: 40px;
+  }
+
+  .coral {
+    --tone: var(--coral-soft);
+    --tone-ink: var(--coral-ink);
+  }
+
+  .amber {
+    --tone: var(--amber-soft);
+    --tone-ink: var(--amber-ink);
+  }
+
+  .teal {
+    --tone: var(--teal-soft);
+    --tone-ink: var(--teal-deep);
+  }
+
+  .visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    block-size: clamp(300px, 30vw, 360px);
+    overflow: hidden;
+    border-radius: var(--radius-large);
+    background: var(--tone);
+  }
+
+  /* Phones stand in the colour block and are cut off at its bottom edge. */
+  .crop {
+    align-items: flex-start;
+    padding-block-start: 28px;
+  }
+
+  .crop::after {
+    position: absolute;
+    inset: auto 0 0;
+    block-size: 56px;
+    background: linear-gradient(transparent, var(--tone));
+    content: "";
+  }
+
+  .phone {
+    inline-size: min(220px, 62%);
+  }
+
+  .scan {
+    position: relative;
+    inline-size: min(260px, 82%);
+    padding: 14px;
+  }
+
+  .corner {
+    position: absolute;
+    inline-size: 26px;
+    block-size: 26px;
+    border: 0 solid var(--coral);
+  }
+
+  .top-left {
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    border-block-start-width: 4px;
+    border-inline-start-width: 4px;
+    border-start-start-radius: 10px;
+  }
+
+  .top-right {
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    border-block-start-width: 4px;
+    border-inline-end-width: 4px;
+    border-start-end-radius: 10px;
+  }
+
+  .bottom-left {
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    border-block-end-width: 4px;
+    border-inline-start-width: 4px;
+    border-end-start-radius: 10px;
+  }
+
+  .bottom-right {
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    border-block-end-width: 4px;
+    border-inline-end-width: 4px;
+    border-end-end-radius: 10px;
+  }
+
+  .paper {
+    display: grid;
+    gap: 6px;
+    padding: 18px 16px 20px;
+    border-radius: 4px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    line-height: 1.6;
+    transform: rotate(-2deg);
+  }
+
+  .paper p {
+    margin: 0;
+  }
+
+  .paper-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .paper-intro {
+    color: var(--muted);
+  }
+
+  .marked {
+    background: linear-gradient(transparent 45%, #f7d9a3 45%);
+  }
+
+  .text {
+    padding-inline: 4px;
+  }
+
+  h3 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-block-start: 18px;
+    font-family: var(--font-heading);
+    font-size: 1.375rem;
+    line-height: 1.4;
+  }
+
+  .number {
+    display: grid;
+    flex: none;
+    place-items: center;
+    inline-size: 36px;
+    block-size: 36px;
+    border-radius: 50%;
+    background: var(--tone);
+    color: var(--tone-ink);
+    font-size: 1.125rem;
+  }
+
+  .text p {
+    margin-block-start: 8px;
+    color: var(--ink-soft);
+  }
+</style>

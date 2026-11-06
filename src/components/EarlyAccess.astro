@@ -1,0 +1,157 @@
+---
+import { LINKS } from "../config";
+import type { Copy } from "../i18n/ja";
+import Icon from "./Icon.astro";
+
+interface Props {
+  earlyAccess: Copy["earlyAccess"];
+}
+
+const { earlyAccess } = Astro.props;
+const [feedbackBefore, feedbackLink, feedbackAfter] = earlyAccess.feedback;
+---
+
+<section id="early-access" aria-labelledby="early-title">
+  <div class="panel">
+    <div class="intro">
+      <p class="badge">{earlyAccess.badge}</p>
+      <h2 id="early-title">{earlyAccess.title}</h2>
+      <p class="lead">{earlyAccess.lead}</p>
+    </div>
+    <div class="plans">
+      <div class="plan free">
+        <h3>{earlyAccess.freeTitle}</h3>
+        <ul>
+          {earlyAccess.freeItems.map((item) => (
+            <li>
+              <Icon name="check" size={18} />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="plan paid">
+        <h3>{earlyAccess.paidTitle}</h3>
+        <ul>
+          {earlyAccess.paidItems.map((item) => (
+            <li>
+              <Icon name="plus" size={18} />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <p class="footnote">{earlyAccess.footnote}</p>
+    <!-- prettier-ignore -->
+    <p class="feedback">{feedbackBefore}<a href={LINKS.contact}>{feedbackLink}</a>{feedbackAfter}</p>
+  </div>
+</section>
+
+<style>
+  section {
+    max-inline-size: var(--page-wide);
+    margin-inline: auto;
+    padding: var(--section) var(--gutter) 0;
+  }
+
+  .panel {
+    padding: clamp(28px, 5vw, 56px) clamp(14px, 5vw, 56px);
+    border-radius: 28px;
+    background: var(--amber-soft);
+  }
+
+  .intro {
+    max-inline-size: 760px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 14px;
+    border-radius: 999px;
+    background: var(--amber-ink);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    margin-block-start: 14px;
+    font-size: var(--text-h2-small);
+  }
+
+  .lead {
+    margin-block-start: 12px;
+    color: var(--ink-soft);
+  }
+
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 16px;
+    max-inline-size: 960px;
+    margin: 32px auto 0;
+  }
+
+  .plan {
+    padding: clamp(18px, 4vw, 24px);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .paid {
+    border: 2px dashed #e4b169;
+    background: rgb(255 255 255 / 60%);
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  ul {
+    display: grid;
+    gap: 8px;
+    margin-block-start: 14px;
+  }
+
+  li {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+
+  li :global(svg) {
+    flex: none;
+    align-self: center;
+  }
+
+  .free li :global(svg) {
+    color: var(--teal);
+  }
+
+  .paid li :global(svg) {
+    color: var(--amber-ink);
+  }
+
+  .footnote,
+  .feedback {
+    max-inline-size: 760px;
+    margin: 20px auto 0;
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+    text-align: center;
+  }
+
+  .feedback {
+    margin-block-start: 8px;
+  }
+
+  .feedback a {
+    color: var(--teal-deep);
+    font-weight: 700;
+  }
+</style>

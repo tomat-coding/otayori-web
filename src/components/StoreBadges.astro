@@ -1,0 +1,74 @@
+---
+import { LINKS } from "../config";
+import type { Copy } from "../i18n/ja";
+import appStoreEn from "../assets/badges/app-store-en.svg";
+import appStoreJa from "../assets/badges/app-store-ja.svg";
+import googlePlayEn from "../assets/badges/google-play-en.png";
+import googlePlayJa from "../assets/badges/google-play-ja.png";
+
+interface Props {
+  badges: Copy["badges"];
+  lang: string;
+  center?: boolean;
+}
+
+const { badges, lang, center = false } = Astro.props;
+const appStore = lang === "ja" ? appStoreJa : appStoreEn;
+const googlePlay = lang === "ja" ? googlePlayJa : googlePlayEn;
+// Official artwork, unmodified. The Google Play files include their own clear space, different in
+// each language, so each is drawn taller to match the App Store badge's visible height.
+const appStoreHeight = 52;
+const googlePlayHeight = lang === "ja" ? 68 : 77;
+---
+
+<div class:list={["badges", { center }]}>
+  <a href={LINKS.appStore}>
+    <img
+      src={appStore.src}
+      alt={badges.appStore}
+      width={Math.round((appStore.width / appStore.height) * appStoreHeight)}
+      height={appStoreHeight}
+    />
+  </a>
+  <a class={lang === "ja" ? "play-ja" : "play-en"} href={LINKS.googlePlay}>
+    <img
+      src={googlePlay.src}
+      alt={badges.googlePlay}
+      width={Math.round((googlePlay.width / googlePlay.height) * googlePlayHeight)}
+      height={googlePlayHeight}
+    />
+  </a>
+</div>
+
+<style>
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .center {
+    justify-content: center;
+  }
+
+  a {
+    display: block;
+    transition: transform 0.15s ease;
+  }
+
+  /* Pull in the clear space built into the Google Play file, so the two badges sit evenly. */
+  .play-ja {
+    margin-block: -8px;
+  }
+
+  .play-en {
+    margin: -12.5px;
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    a:hover {
+      transform: translateY(-2px);
+    }
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+import { SITE_URL } from "../config";
+import type { Copy } from "../i18n/ja";
+import Base from "../layouts/Base.astro";
+import Devices from "./Devices.astro";
+import EarlyAccess from "./EarlyAccess.astro";
+import Faq from "./Faq.astro";
+import Features from "./Features.astro";
+import Footer from "./Footer.astro";
+import GetApp from "./GetApp.astro";
+import HandoutPhrases from "./HandoutPhrases.astro";
+import Header from "./Header.astro";
+import Hero from "./Hero.astro";
+import Steps from "./Steps.astro";
+import Trust from "./Trust.astro";
+import UseCases from "./UseCases.astro";
+import WhyStrip from "./WhyStrip.astro";
+
+interface Props {
+  copy: Copy;
+}
+
+const { copy } = Astro.props;
+const url = new URL(copy.lang === "ja" ? "/" : "/en/", SITE_URL).href;
+const { features } = copy;
+
+const app = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: copy.siteName,
+  alternateName: copy.lang === "ja" ? "Otayorin" : "おたよりん",
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "iOS 17+, Android 9+, macOS 14+",
+  inLanguage: copy.lang,
+  description: copy.meta.description,
+  url,
+  // Every feature named on the page, so answer engines get the same list people see.
+  featureList: [
+    ...copy.why.items.map((item) => item.title),
+    ...copy.phrases.items.map((item) => item.kind),
+    ...[features.week, features.calendar, features.ask, features.documents, features.reminders, ...features.small].map(
+      (tile) => tile.title,
+    ),
+  ],
+  // True during early access: the app and every feature cost nothing.
+  offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" },
+};
+
+const faqPage = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  inLanguage: copy.lang,
+  mainEntity: copy.faq.items.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+---
+
+<Base copy={copy} alternates={{ ja: "/", en: "/en/" }}>
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(app)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(faqPage)} />
+  </Fragment>
+  <Header copy={copy} />
+  <main id="main">
+    <Hero copy={copy} />
+    <WhyStrip why={copy.why} />
+    <UseCases useCases={copy.useCases} />
+    <Steps steps={copy.steps} />
+    <HandoutPhrases phrases={copy.phrases} />
+    <Features features={copy.features} />
+    <Devices copy={copy} />
+    <Trust trust={copy.trust} privacyHref={copy.footer.privacyHref} />
+    <EarlyAccess earlyAccess={copy.earlyAccess} />
+    <Faq faq={copy.faq} />
+    <GetApp copy={copy} />
+  </main>
+  <Footer footer={copy.footer} />
+</Base>

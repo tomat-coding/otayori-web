@@ -1,0 +1,156 @@
+---
+import type { Copy } from "../i18n/ja";
+
+interface Props {
+  copy: Copy;
+}
+
+const { copy } = Astro.props;
+const home = copy.lang === "ja" ? "/" : "/en/";
+---
+
+<header>
+  <div class="bar">
+    <a class="brand" href={home}>
+      <img src="/favicon.svg" alt="" width="36" height="36" />
+      <span>{copy.siteName}</span>
+    </a>
+    <nav aria-label={copy.nav.label}>
+      <ul class="sections">
+        {copy.nav.sections.map((section) => (
+          <li>
+            <a href={`${home}${section.href}`}>{section.label}</a>
+          </li>
+        ))}
+      </ul>
+      <a class="switch" href={copy.nav.switchHref} lang={copy.nav.switchLang} hreflang={copy.nav.switchLang}>
+        {copy.nav.switchLabel}
+      </a>
+      <a class="cta" href={`${home}#get-the-app`}>
+        {copy.nav.getApp}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 10;
+    background: var(--teal);
+    color: #fff;
+  }
+
+  .bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    max-inline-size: var(--page-wide);
+    margin-inline: auto;
+    padding: 10px var(--gutter);
+  }
+
+  .brand {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    min-block-size: 44px;
+    font-family: var(--font-heading);
+    font-size: 1.3125rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+
+  /* Jump links to the page's sections, on screens wide enough to fit them beside the brand. */
+  .sections {
+    display: none;
+  }
+
+  @media (width >= 1024px) {
+    .sections {
+      display: flex;
+      gap: 4px;
+      margin-inline-end: 8px;
+    }
+
+    .sections a {
+      display: block;
+      padding: 10px 10px;
+      border-radius: 999px;
+      color: var(--on-teal-soft);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .sections a:hover {
+      background: var(--teal-deep);
+      color: #fff;
+    }
+  }
+
+  .switch {
+    padding: 12px 2px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    min-block-size: 44px;
+    padding-inline: 18px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--teal-deep);
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* おたよりん plus English and the button only just fit on a phone, so the bar tightens. */
+  @media (width <= 400px) {
+    .bar,
+    nav {
+      gap: 8px;
+    }
+
+    .brand {
+      gap: 6px;
+      font-size: 1.125rem;
+    }
+
+    .brand img {
+      inline-size: 32px;
+      block-size: 32px;
+    }
+
+    .cta {
+      padding-inline: 14px;
+    }
+  }
+
+  @media (width < 360px) {
+    nav {
+      font-size: 0.875rem;
+    }
+
+    .brand {
+      font-size: 1rem;
+    }
+
+    .brand img {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,43 @@
+Otayorin Terms of Use
+
+Last updated: October 27, 2026
+
+These Terms of Use ("Terms") set out the conditions for using Otayorin (the "App"). By using the App, you agree to these Terms.
+
+1. The App
+The App helps you photograph or import handouts from school or nursery, organise their events, things to bring and forms, and share them with your family. What the App reads and what the AI assistant answers can be wrong. Always check important dates against the original handout.
+
+2. Accounts
+Sharing with your family, the desktop app and Otayori Plus need an account. Keep your account details accurate and secure.
+
+3. The free plan and Otayori Plus
+(1) The App is free to use. The free plan limits how many handouts (photos) you can share with your family (10 a month) and how many questions you can ask the AI assistant (3 a day).
+(2) Otayori Plus ("Plus") is an auto-renewing monthly or yearly subscription. It removes those limits and includes the desktop app. When one person in a family subscribes, everyone in the same family (sharing group) can use Plus.
+(3) New families (sharing groups) and new accounts can use Plus for their first 14 days without subscribing.
+(4) Prices, periods and free trials are shown on the subscription screen.
+(5) Sharing handouts (photos) is meant for sharing your family’s handouts. Each photo is at most 3 MB and a JPEG, and uploads per hour and per day may be limited when use goes far beyond normal, such as automated bulk uploads. Sharing your family’s handouts in the usual way never reaches these limits.
+
+4. Payment, renewal and cancellation
+(1) Payment is made through the App Store (Apple) or Google Play (Google), and their terms apply.
+(2) Plus renews automatically for the same period unless cancelled at least 24 hours before the end of the current period.
+(3) You can cancel anytime in your store account settings. After cancelling, Plus continues until the end of the period you paid for.
+(4) Refunds follow the rules of each store.
+(5) Cancelling during a free trial costs nothing.
+
+5. Prohibited conduct
+Do not break the law, impersonate others, place excessive load on the App or its servers, or modify or reverse-engineer the App without permission.
+
+6. Data
+How the App handles information is described in the Privacy Policy. Events and handouts you share with your family can be seen by the members of the same family (sharing group).
+
+7. Changes and discontinuation
+The App, its plans and their limits may change. Important changes will be announced in the App. If the App is discontinued, we will let you know in advance.
+
+8. Disclaimer
+The App does not guarantee that what it reads or what the AI answers is accurate, or that notifications always arrive. To the extent permitted by law, we are not liable for damages arising from use of the App, except in cases of intent or gross negligence.
+
+9. Changes to these Terms
+These Terms may be updated when needed. Updated Terms take effect when they are shown in the App.
+
+10. Governing law and jurisdiction
+These Terms are governed by the laws of Japan. The Tokyo District Court has exclusive jurisdiction in the first instance over disputes about the App.

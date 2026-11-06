@@ -1,0 +1,20 @@
+---
+import LegalPage from "../components/LegalPage.astro";
+import PolicyBody from "../components/PolicyBody.astro";
+import { TERMS_PUBLISHED } from "../config";
+import { ja } from "../i18n/ja";
+import { parsePolicy } from "../legal/policy";
+import text from "../legal/terms_ja.txt?raw";
+
+// The app's own terms, copied by scripts/sync-legal.mjs.
+const terms = parsePolicy(text);
+const alternates = { ja: "/terms/", en: "/en/terms/" };
+---
+
+{TERMS_PUBLISHED ? (
+  <LegalPage copy={ja} title={terms.title} alternates={alternates}>
+    <PolicyBody policy={terms} />
+  </LegalPage>
+) : (
+  <LegalPage copy={ja} title="利用規約" draftNotice="利用規約は準備中です。" alternates={alternates} />
+)}

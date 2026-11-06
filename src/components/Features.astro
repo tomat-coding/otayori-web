@@ -1,0 +1,236 @@
+---
+import type { Copy } from "../i18n/ja";
+import androidHome from "../assets/screens/android-home.png";
+import iosCalendar from "../assets/screens/ios-calendar.png";
+import iosDocuments from "../assets/screens/ios-documents.png";
+import macAsk from "../assets/screens/mac-ask.png";
+import FeatureTile from "./FeatureTile.astro";
+import PhoneFrame from "./PhoneFrame.astro";
+import Screen from "./Screen.astro";
+
+interface Props {
+  features: Copy["features"];
+}
+
+const { features } = Astro.props;
+const { week, calendar, ask, documents, reminders, small } = features;
+const [share, calendarApp, widgets] = small;
+const phoneSizes = "(min-width: 1100px) 240px, (min-width: 900px) 24vw, 60vw";
+const mock = reminders.mock;
+---
+
+<section id="features" class="page" aria-labelledby="features-title">
+  <h2 id="features-title" class="section-title">
+    {features.title}
+  </h2>
+  <p class="section-lead">{features.lead}</p>
+
+  <div class="grid">
+    <FeatureTile
+      title={week.title}
+      body={week.body}
+      bullets={week.bullets}
+      platforms={week.platforms}
+      tone="teal"
+      media="crop"
+    >
+      <PhoneFrame src={androidHome} alt={week.alt} kind="android" sizes={phoneSizes} />
+    </FeatureTile>
+
+    <FeatureTile
+      id="family-calendar"
+      title={calendar.title}
+      body={calendar.body}
+      bullets={calendar.bullets}
+      platforms={calendar.platforms}
+      tone="sky"
+      media="crop"
+    >
+      <PhoneFrame src={iosCalendar} alt={calendar.alt} sizes={phoneSizes} />
+    </FeatureTile>
+
+    <FeatureTile
+      title={ask.title}
+      body={ask.body}
+      bullets={ask.bullets}
+      note={ask.note}
+      platforms={ask.platforms}
+      tone="teal"
+      paid={{ label: features.paidChip, href: "#early-access" }}
+    >
+      <div class="card">
+        <Screen src={macAsk} alt={ask.alt} widths={[440, 704]} sizes="(min-width: 900px) 440px, 84vw" />
+      </div>
+    </FeatureTile>
+
+    <FeatureTile
+      title={documents.title}
+      body={documents.body}
+      bullets={documents.bullets}
+      platforms={documents.platforms}
+      tone="sky"
+    >
+      <div class="card">
+        <Screen
+          src={iosDocuments}
+          alt={documents.alt}
+          widths={[340, 680, 1020]}
+          sizes="(min-width: 900px) 440px, 84vw"
+        />
+      </div>
+    </FeatureTile>
+  </div>
+
+  <div class="wide-row">
+    <FeatureTile
+      id="reminders"
+      title={reminders.title}
+      body={reminders.body}
+      platforms={reminders.platforms}
+      tone="amber"
+      icon="bell"
+      layout="wide"
+    >
+      <div class="lock" role="img" aria-label={mock.label}>
+        <div class="notification">
+          <span class="app-icon" aria-hidden="true">
+            <img src="/favicon.svg" alt="" width="20" height="20" />
+          </span>
+          <div>
+            <p class="meta">
+              <span>{mock.app}</span>
+              <span>{mock.time}</span>
+            </p>
+            <p class="title">{mock.summary}</p>
+            <p>{mock.summaryBody}</p>
+          </div>
+        </div>
+        <div class="notification">
+          <span class="app-icon" aria-hidden="true">
+            <img src="/favicon.svg" alt="" width="20" height="20" />
+          </span>
+          <div>
+            <p class="meta">
+              <span>{mock.app}</span>
+              <span>{mock.time}</span>
+            </p>
+            <p class="title">{mock.single}</p>
+            <p>{mock.singleBody}</p>
+          </div>
+        </div>
+      </div>
+    </FeatureTile>
+  </div>
+
+  <div class="small">
+    <FeatureTile
+      id="family-sharing"
+      title={share.title}
+      body={share.body}
+      platforms={share.platforms}
+      tone="coral"
+      icon={share.icon}
+    />
+    <FeatureTile
+      title={calendarApp.title}
+      body={calendarApp.body}
+      platforms={calendarApp.platforms}
+      tone="amber"
+      icon={calendarApp.icon}
+    />
+
+    <FeatureTile
+      title={widgets.title}
+      body={widgets.body}
+      platforms={widgets.platforms}
+      tone="sky"
+      icon={widgets.icon}
+    />
+  </div>
+</section>
+
+<style>
+  section {
+    padding-block: var(--section);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+    gap: 16px;
+    margin-block-start: 40px;
+  }
+
+  .wide-row {
+    margin-block-start: 16px;
+  }
+
+  .small {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 16px;
+    margin-block-start: 16px;
+  }
+
+  .card {
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--ground);
+    box-shadow: var(--shadow);
+  }
+
+  .card :global(img) {
+    inline-size: 100%;
+  }
+
+  /* A lock screen drawn in CSS, so the text stays real and sharp. */
+  .lock {
+    display: grid;
+    gap: 10px;
+    inline-size: 100%;
+    padding: clamp(20px, 3vw, 32px) clamp(12px, 2vw, 24px);
+    border-radius: 14px;
+    background: linear-gradient(160deg, #0b5a53, #0f766e 55%, #1b8a81);
+  }
+
+  .notification {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 14px;
+    border-radius: 18px;
+    background: rgb(255 255 255 / 92%);
+    box-shadow: 0 6px 18px rgb(0 0 0 / 18%);
+    color: var(--ink);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .notification p {
+    margin: 0;
+  }
+
+  .app-icon {
+    flex: none;
+    padding: 5px;
+    border-radius: 8px;
+    background: var(--surface);
+    box-shadow: 0 0 0 1px var(--line);
+  }
+
+  .notification > div {
+    flex: 1;
+    min-inline-size: 0;
+  }
+
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+
+  .title {
+    font-weight: 700;
+  }
+</style>

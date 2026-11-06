@@ -1,0 +1,29 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  widths: number[];
+  sizes: string;
+  /** Marks the page's largest image, so the browser fetches it first. */
+  priority?: boolean;
+  class?: string;
+}
+
+const { src, alt, widths, sizes, priority = false, class: className } = Astro.props;
+---
+
+<Picture
+  src={src}
+  alt={alt}
+  formats={["avif", "webp"]}
+  fallbackFormat="png"
+  widths={widths}
+  sizes={sizes}
+  loading={priority ? "eager" : "lazy"}
+  decoding={priority ? "sync" : "async"}
+  fetchpriority={priority ? "high" : "auto"}
+  class={className}
+/>
