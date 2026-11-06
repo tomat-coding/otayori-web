@@ -36,7 +36,7 @@ export const en: Copy = {
     kicker: "Just snap the handout.",
     title: ["Turn school handouts", "into one family calendar"],
     lead: "Otayorin is an app for parents in Japan. Photograph a school or nursery handout and it finds the dates, the things to bring, the forms to hand in and the payments, then puts them on one calendar for the whole family.",
-    reassure: "No ads. No account needed to start.",
+    reassure: "Ad-free during early access. No account needed to start.",
     alts: {
       calendar: "Otayorin on Android: the family calendar for November with Japanese holidays",
       home: "Otayorin on iPhone: the next form to hand in at the top, then today's and tomorrow's items",
@@ -57,14 +57,14 @@ export const en: Copy = {
         body: "Reads vertical (縦書き) handouts on iPhone with iOS 26 or later, and on Mac with macOS 26 or later.",
       },
       {
-        icon: "ban",
-        title: "No ads, no tracking",
-        body: "No adverts between you and your schedule, and nothing in the app that tracks what you do.",
+        icon: "chat",
+        title: "Ask, free on every device",
+        body: 'Ask "What do we need tomorrow?" and get the answer from your handouts, with no limit, on any device.',
       },
       {
         icon: "family",
-        title: "Shared with your family",
-        body: "Up to 6 people see the same schedule, even with iPhones and Android phones in one family.",
+        title: "Shared with your partner",
+        body: "Both of you see the same schedule, even with an iPhone and an Android phone. Sharing is free.",
       },
     ],
   },
@@ -245,12 +245,13 @@ export const en: Copy = {
       title: "Ask about your handouts",
       body: 'Ask "What do we need tomorrow?" or "What time do we meet for the trip?" and Otayorin answers from your schedule and your handouts. Type "Add gym clothes for Friday" and it drafts the item for you to confirm.',
       bullets: [
+        "Free on every device, with no limit",
         "Answers link to the items and handouts they came from",
         "Answers are made on your device, and questions aren't sent anywhere",
       ],
-      note: "Needs Apple Intelligence on iOS 26 or macOS 26. AI answers can be wrong, so check the handout too.",
+      note: "On iPhone (iOS 26 or later) and Mac (macOS 26 or later) with Apple Intelligence, you can ask in your own words. On other devices, answers come as quick lists from your schedule and handouts. AI answers can be wrong, so check the handout too.",
       alt: "A question about what to bring on the autumn trip, answered with a link to the item",
-      platforms: ["iPhone", "Mac"],
+      platforms: ["iPhone", "Android", "Mac"],
     },
     documents: {
       title: "Lost the paper? It's still here",
@@ -281,7 +282,7 @@ export const en: Copy = {
       {
         icon: "qr",
         title: "Share the schedule with your partner",
-        body: "Invite family with a code, link or QR code. New items and every tick show up on everyone's phone, with who ticked what. Sharing the schedule is planned to stay free.",
+        body: "Invite family with a code, link or QR code. New items and every tick show up on everyone's phone, with who ticked what. Sharing with your partner is planned to stay free.",
         platforms: ["iPhone", "Android", "Mac"],
       },
       {
@@ -327,8 +328,8 @@ export const en: Copy = {
       },
       {
         icon: "ban",
-        title: "No ads, no tracking",
-        body: "There are no ads and nothing that tracks what you do. On Android, Google's ML Kit, which does the reading, sends Google diagnostics, but never your photos or their text.",
+        title: "No tracking",
+        body: "Nothing in the app tracks what you do, and there are no analytics tools. On Android, Google's ML Kit, which does the reading, sends Google diagnostics, but never your photos or their text.",
       },
       {
         icon: "trash",
@@ -348,18 +349,20 @@ export const en: Copy = {
       "The family calendar and packing checklists",
       "Reminders",
       "Keeping and searching handouts",
-      "Sharing the schedule with family",
-      "No ads",
+      "Ask about your handouts, with no limit",
+      "Sharing the schedule with your partner",
     ],
     paidTitle: "Planned for the paid plan, おたよりプラス (Otayori Plus)",
     paidItems: [
-      "Asking about your handouts, beyond light use",
+      "Sharing with more family, like grandparents or a babysitter",
       "Reading PDFs and scans with several pages",
+      "Widgets on iPhone",
       "Sharing handout photos with family (coming with the official release)",
       "The Mac app",
+      "No ads (the free plan may show ads)",
     ],
     footnote:
-      "The paid plan is planned to cover the whole household. Prices and details will be announced on this page once they're decided. During early access, everything above is free.",
+      "The paid plan is planned to cover the whole household. Prices and details will be announced on this page once they're decided. During early access, there are no ads and everything above is free.",
     feedback: ["Found a problem or have an idea? ", "Get in touch", "."],
   },
   faq: {
@@ -367,11 +370,15 @@ export const en: Copy = {
     items: [
       {
         q: "Is Otayorin free?",
-        a: "Yes. During early access, every feature is free on iPhone, Android and Mac. After the official release, reading handouts, the calendar, reminders and sharing the schedule with family are planned to stay free.",
+        a: "Yes. During early access, every feature is free on iPhone, Android and Mac. After the official release, reading handouts, the calendar, reminders, Ask about your handouts and sharing the schedule with your partner are planned to stay free.",
       },
       {
         q: "Which features will become paid?",
-        a: "After the official release, heavier use of Ask about your handouts, reading multi-page PDFs and scans, sharing handout photos with family, and the Mac app are planned for the paid plan, おたよりプラス (Otayori Plus). Prices and details will be announced once they're decided.",
+        a: "After the official release, sharing with more family than your partner (grandparents or a babysitter, say), reading multi-page PDFs and scans, widgets on iPhone, sharing handout photos with family, and the Mac app are planned for the paid plan, おたよりプラス (Otayori Plus). Prices and details will be announced once they're decided.",
+      },
+      {
+        q: "Will there be ads?",
+        a: "Not during early access. After the official release, the free plan may show ads. おたよりプラス (Otayori Plus) is planned to stay ad-free.",
       },
       {
         q: "What does early access mean?",
@@ -399,11 +406,15 @@ export const en: Copy = {
       },
       {
         q: "How many people can share one family?",
-        a: "Up to 6. iPhones and Android phones can mix. Each person sets their own reminder times on their own phone.",
+        a: "During early access, up to 6 people can join one family. After the official release, sharing with your partner stays free, and adding more family, such as grandparents, is planned for おたよりプラス (Otayori Plus). iPhones and Android phones can mix, and each person sets their own reminder times on their own phone.",
       },
       {
         q: "Are there limits on storage or questions?",
-        a: "Not during early access. You can keep as many handouts as your device can hold. After the official release, the free plan is planned to limit how often you can use Ask about your handouts.",
+        a: "Ask about your handouts is free on every plan, with no limit. Handouts have no app-side limit either: you can keep as many as your device can hold.",
+      },
+      {
+        q: "Which devices can use Ask about your handouts?",
+        a: "iPhone, Android and Mac. With Apple Intelligence (iPhone on iOS 26 or later, Mac on macOS 26 or later) you can ask in your own words; on other devices, answers come as quick lists from your schedule and handouts. Both are free, and what you ask never leaves the device.",
       },
       {
         q: "Does it translate handouts into English?",
