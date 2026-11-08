@@ -15,6 +15,7 @@ const { footer } = Astro.props;
     <nav aria-label={footer.label}>
       <a href={withBase(footer.privacyHref)}>{footer.privacy}</a>
       <a href={withBase(footer.termsHref)}>{footer.terms}</a>
+      <a href={withBase(footer.accountDeletionHref)}>{footer.accountDeletion}</a>
       <a href={LINKS.contact}>{footer.contact}</a>
     </nav>
   </div>

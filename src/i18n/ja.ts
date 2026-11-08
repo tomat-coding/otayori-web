@@ -437,6 +437,8 @@ export const ja = {
     privacyHref: "/privacy/",
     terms: "利用規約",
     termsHref: "/terms/",
+    accountDeletion: "アカウントの削除",
+    accountDeletionHref: "/account-deletion/",
     contact: "お問い合わせ",
     trademarks:
       "Apple、Appleロゴ、App Storeは、Apple Inc.の商標です。Google PlayおよびGoogle Playロゴは、Google LLCの商標です。",

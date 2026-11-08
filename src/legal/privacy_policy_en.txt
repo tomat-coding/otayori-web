@@ -4,7 +4,7 @@ Last updated: November 5, 2026
 
 1. Our approach
 Otayorin (the iPhone, Android and Mac apps and the servers behind them; "the app") helps you photograph or import handouts from school or nursery and keep track of the dates, things to bring and forms to hand in.
-While you use the app without signing in, its information is stored only on your device and is not sent to any server (except Android's diagnostic information; see section 5). Only when you sign in is the information in section 3 stored on our servers, so that your other devices signed in to the same account (phones and computers), and your family, see the same schedule.
+While you use the app without signing in, its information is stored only on your device and is not sent to any server (except Android's diagnostic information; see section 5). The app does ask our server, at launch and when it comes back, whether your version is still supported and whether paid plans are offered; it sends only the kind of device (iPhone, Android or Mac), with no information about your children or schedule and no identifier (as with any connection, the server receives your IP address). Only when you sign in is the information in section 3 stored on our servers, so that your other devices signed in to the same account (phones and computers), and your family, see the same schedule.
 
 2. Information kept only on your device
 - Photos of handouts you take or import (except those you choose to share), and the text read from them
@@ -40,8 +40,8 @@ Information is used only to:
 It is never used for advertising, marketing or training AI.
 
 5. Processing on your device, and diagnostics sent to Google
-Text recognition (OCR) and the AI assistant run on your device. Your photos, the recognised text, your questions and the answers are never sent for this processing. iPhone and Mac use Apple's on-device features.
-On Android, text recognition and the AI assistant (on phones that support it) use Google's ML Kit. ML Kit sends Google the following information, encrypted, for diagnostics and usage analytics. This cannot be turned off and happens even when you are not signed in.
+Scanning documents (finding and cropping the page), text recognition (OCR) and the AI assistant run on your device. Your photos, the recognised text, your questions and the answers are never sent for this processing. iPhone and Mac use Apple's on-device features.
+On Android, document scanning (the document scanner in Google Play services), text recognition and the AI assistant (on phones that support it) use Google's ML Kit. ML Kit sends Google the following information, encrypted, for diagnostics and usage analytics. This cannot be turned off and happens even when you are not signed in.
 - Device manufacturer, model and OS version
 - App name and version
 - A per-installation identifier (not intended to identify you or your device)
@@ -80,7 +80,7 @@ Information you share with your family can be seen by the members of the same fa
 - Photos and files: only the photos and files you pick, files shared from another app, and files you drop on the Mac are read. The app has no access to your whole photo library.
 - Notifications: permission is asked when you turn on a reminder. Reminders are set on the device, and lock screens don't show your children's names. On iPhone, while you share with your family, you can receive your partner's updates ("Papa added 3 items"). These notices never include titles or children's names.
 - Calendar: an event is added only when you save it yourself in the screen opened by "Add to calendar" (the iOS screen, your Android calendar app, or a file opened on the Mac). The app never reads your calendar.
-- Widgets (iPhone): a copy of the next 30 days' items is kept where only the app and its widgets can read it. Lock screen widgets don't show your children's names.
+- Widgets (iPhone and Android): a copy of the next 30 days' items is kept where only the app and its widgets can read it. Lock screen widgets on iPhone don't show your children's names.
 - AI assistant ("Ask about your handouts"): your device's built-in AI (Apple Intelligence on iPhone and Mac, Gemini Nano on supported Android phones) makes the answers. For the diagnostics on Android, see section 5.
 
 11. Backups

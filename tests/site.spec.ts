@@ -113,3 +113,25 @@ for (const { path, heading } of [
     expect(results.violations.map((violation) => violation.id)).toEqual([]);
   });
 }
+
+// Google Play's Data safety form links here, so it has to be reachable from every page and work without the app.
+for (const { path, heading, footer } of [
+  { path: withBase("/account-deletion/"), heading: "アカウントとデータの削除", footer: withBase("/") },
+  { path: withBase("/en/account-deletion/"), heading: "deleting your account and data", footer: withBase("/en/") },
+]) {
+  test(`${path} explains how to delete an account`, async ({ page }) => {
+    await page.goto(footer);
+    await page.locator(`footer a[href='${path}']`).click();
+    await expect(page).toHaveURL(new RegExp(`${path}$`));
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.locator("h1")).toContainText(heading);
+    await expect(page.locator("main h2")).toHaveCount(4);
+    await expect(page.locator("main ol li")).toHaveCount(2);
+    await expect(page.locator("main a[href='mailto:tomat.firma@gmail.com']")).toHaveCount(1);
+    await expect(page.locator("meta[name='robots']")).toHaveAttribute("content", "noindex");
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    expect(overflow).toBeLessThanOrEqual(0);
+    const results = await new AxeBuilder({ page }).analyze();
+    expect(results.violations.map((violation) => violation.id)).toEqual([]);
+  });
+}

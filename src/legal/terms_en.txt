@@ -11,8 +11,8 @@ The App helps you photograph or import handouts from school or nursery, organise
 Sharing with your family, the desktop app and Otayori Plus need an account. Keep your account details accurate and secure.
 
 3. The free plan and Otayori Plus
-(1) The App is free to use. The free plan limits how many handouts (photos) you can share with your family (10 a month) and how many questions you can ask the AI assistant (3 a day).
-(2) Otayori Plus ("Plus") is an auto-renewing monthly or yearly subscription. It removes those limits and includes the desktop app. When one person in a family subscribes, everyone in the same family (sharing group) can use Plus.
+(1) The App is free to use. The free plan limits how many people a family (sharing group) can have (2), how many pages are read from a PDF or scan (the first page), and how many handouts (photos) you can share with your family (10 a month), and doesn't include widgets. The AI assistant (Ask about your handouts) has no limit on any plan.
+(2) Otayori Plus ("Plus") is an auto-renewing monthly or yearly subscription. It allows up to 6 people in a family and up to 10 pages per PDF or scan, removes the limit on sharing handouts (photos), and includes widgets and the desktop app. When one person in a family subscribes, everyone in the same family (sharing group) can use Plus. When Plus ends, everyone in the family stays, but no new members can join beyond the free plan's limit.
 (3) New families (sharing groups) and new accounts can use Plus for their first 14 days without subscribing.
 (4) Prices, periods and free trials are shown on the subscription screen.
 (5) Sharing handouts (photos) is meant for sharing your family’s handouts. Each photo is at most 3 MB and a JPEG, and uploads per hour and per day may be limited when use goes far beyond normal, such as automated bulk uploads. Sharing your family’s handouts in the usual way never reaches these limits.

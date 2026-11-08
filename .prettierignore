@@ -2,5 +2,7 @@ dist/
 .astro/
 package-lock.json
 public/
+# Copied from the app repo by scripts/sync-legal.mjs; don't reformat.
+src/legal/
 test-results/
 playwright-report/

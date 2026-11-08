@@ -57,6 +57,19 @@ const documentTitle = title.includes(copy.siteName) ? title : `${title} | ${copy
     list-style: disc;
   }
 
+  .legal :global(ol) {
+    padding-inline-start: 1.5em;
+    list-style: decimal;
+  }
+
+  .legal :global(:is(p, ul, ol) + :is(p, ul, ol)) {
+    margin-block-start: 10px;
+  }
+
+  .legal :global(a) {
+    color: var(--teal-deep);
+  }
+
   .legal :global(li + li) {
     margin-block-start: 6px;
   }

@@ -434,6 +434,8 @@ export const en: Copy = {
     privacyHref: "/en/privacy/",
     terms: "Terms",
     termsHref: "/en/terms/",
+    accountDeletion: "Delete your account",
+    accountDeletionHref: "/en/account-deletion/",
     contact: "Contact",
     trademarks:
       "Apple, the Apple logo and App Store are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.",

@@ -1,0 +1,17 @@
+---
+import LegalPage from "../../components/LegalPage.astro";
+import { withBase } from "../../config";
+import { en } from "../../i18n/en";
+import { Content, frontmatter } from "../../legal/account_deletion_en.md";
+
+// The app's account deletion page (Google Play's "Data deletion" link), copied by scripts/sync-legal.mjs.
+---
+
+<LegalPage copy={en} title={frontmatter.title} alternates={{ ja: "/account-deletion/", en: "/en/account-deletion/" }}>
+  <div class="deletion">
+    <Content />
+    <p>
+      <a href={withBase(en.footer.privacyHref)}>{en.footer.privacy}</a>
+    </p>
+  </div>
+</LegalPage>
