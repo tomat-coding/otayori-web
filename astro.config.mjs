@@ -14,7 +14,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !/\/(privacy|terms|account-deletion)\//.test(page),
+      filter: (page) => !/\/(privacy|terms|account-deletion|send)\//.test(page),
       i18n: { defaultLocale: "ja", locales: { ja: "ja", en: "en" } },
     }),
   ],

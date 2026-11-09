@@ -4,9 +4,13 @@ import type { Copy } from "../i18n/ja";
 
 interface Props {
   copy: Copy;
+  /** The same page in the other language. Defaults to the other home page. */
+  switchHref?: string;
+  /** Only the brand and the language switch, for pages that aren't about the app (the send page). */
+  bare?: boolean;
 }
 
-const { copy } = Astro.props;
+const { copy, switchHref = copy.nav.switchHref, bare = false } = Astro.props;
 const home = withBase(copy.lang === "ja" ? "/" : "/en/");
 ---
 
@@ -17,19 +21,23 @@ const home = withBase(copy.lang === "ja" ? "/" : "/en/");
       <span>{copy.siteName}</span>
     </a>
     <nav aria-label={copy.nav.label}>
-      <ul class="sections">
-        {copy.nav.sections.map((section) => (
-          <li>
-            <a href={`${home}${section.href}`}>{section.label}</a>
-          </li>
-        ))}
-      </ul>
-      <a class="switch" href={withBase(copy.nav.switchHref)} lang={copy.nav.switchLang} hreflang={copy.nav.switchLang}>
+      {!bare && (
+        <ul class="sections">
+          {copy.nav.sections.map((section) => (
+            <li>
+              <a href={`${home}${section.href}`}>{section.label}</a>
+            </li>
+          ))}
+        </ul>
+      )}
+      <a class="switch" href={withBase(switchHref)} lang={copy.nav.switchLang} hreflang={copy.nav.switchLang}>
         {copy.nav.switchLabel}
       </a>
-      <a class="cta" href={`${home}#get-the-app`}>
-        {copy.nav.getApp}
-      </a>
+      {!bare && (
+        <a class="cta" href={`${home}#get-the-app`}>
+          {copy.nav.getApp}
+        </a>
+      )}
     </nav>
   </div>
 </header>

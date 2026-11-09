@@ -1,0 +1,9 @@
+---
+import SendPage from "../../../components/SendPage.astro";
+import { en } from "../../../i18n/en";
+import { en as send } from "../../../i18n/pages/send";
+
+// A teacher's send page: /en/send/#<token>, a link the parent made in the app. Not indexed, not in the sitemap.
+---
+
+<SendPage copy={en} send={send} />

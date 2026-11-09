@@ -12,9 +12,24 @@ interface Props {
   /** This page's path in each language. Omit on pages with no translation. */
   alternates?: { ja: string; en: string };
   noindex?: boolean;
+  /** The title link previews show. Defaults to the home page's share title. */
+  ogTitle?: string;
+  /** A stricter referrer policy than the site's header, e.g. "no-referrer" on the send page. */
+  referrer?: string;
+  /** A Content-Security-Policy for this page, on top of the site's header. Built pages only: dev injects inline code. */
+  csp?: string;
 }
 
-const { copy, title = copy.meta.title, description = copy.meta.description, alternates, noindex = false } = Astro.props;
+const {
+  copy,
+  title = copy.meta.title,
+  description = copy.meta.description,
+  alternates,
+  noindex = false,
+  ogTitle = copy.meta.ogTitle,
+  referrer,
+  csp,
+} = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 const ogImage = new URL(withBase(copy.meta.ogImage), SITE_URL).href;
 ---
@@ -23,6 +38,8 @@ const ogImage = new URL(withBase(copy.meta.ogImage), SITE_URL).href;
 <html lang={copy.lang}>
   <head>
     <meta charset="utf-8" />
+    {referrer && <meta name="referrer" content={referrer} />}
+    {csp && import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={csp} />}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -44,7 +61,7 @@ const ogImage = new URL(withBase(copy.meta.ogImage), SITE_URL).href;
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={copy.siteName} />
     <meta property="og:locale" content={copy.meta.ogLocale} />
-    <meta property="og:title" content={copy.meta.ogTitle} />
+    <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
