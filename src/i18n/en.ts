@@ -144,7 +144,7 @@ export const en: Copy = {
     items: [
       {
         title: "Snap it",
-        body: "Take a photo, or pick photos or PDFs. Handouts that arrive by email go straight in from the Share button.",
+        body: "Take a photo, or pick photos or PDFs. The camera finds the edges of the page and straightens it. Handouts that arrive by email go straight in from the Share button.",
       },
       {
         title: "Check it",
@@ -317,8 +317,8 @@ export const en: Copy = {
       {
         icon: "widget",
         title: "Today and tomorrow on your Home Screen",
-        body: "Widgets show today's items and what to get ready without opening the app, and switch to tomorrow after 3pm. They work on the Lock Screen too.",
-        platforms: ["iPhone"],
+        body: "Widgets show today's items and what to get ready without opening the app, and switch to tomorrow after 3pm. On iPhone they work on the Lock Screen too.",
+        platforms: ["iPhone", "Android"],
       },
     ],
   },
@@ -328,11 +328,11 @@ export const en: Copy = {
     columns: ["iPhone", "Android", "Mac"],
     mac: {
       title: "The Mac app, in early access too",
-      body: "See the week, the month and all your handouts on a big screen. Drag PDFs and photos from email straight into the window. Sign in by scanning a QR code with your signed-in phone. Reminders come to your phone.",
+      body: "See the week, the month and all your handouts on a big screen. Drag PDFs and photos from email straight into the window. Sign in by scanning a QR code with your signed-in phone. Reminders come to your phone. A Windows version is on the way.",
       alt: "Otayorin for Mac: the month calendar, with the selected day's items beside it",
     },
     needsLabel: "Requirements",
-    needs: ["iPhone: iOS 17 or later", "Android: Android 9 or later", "Mac: macOS 14 or later"],
+    needs: ["iPhone: iOS 17 or later", "Android: Android 9 or later", "Mac: macOS 14 or later", "Windows: on the way"],
     caption: "Real screens with sample data, shown in Japanese. The app also comes in English.",
   },
   trust: {
@@ -352,7 +352,7 @@ export const en: Copy = {
       {
         icon: "ban",
         title: "No tracking",
-        body: "Nothing in the app tracks what you do, and there are no analytics tools. On Android, Google's ML Kit, which does the reading, sends Google diagnostics, but never your photos or their text.",
+        body: "Nothing in the app tracks what you do, and there are no analytics tools. On Android, Google's ML Kit, which does the scanning and reading, sends Google diagnostics, but never your photos or their text.",
       },
       {
         icon: "trash",
@@ -379,10 +379,10 @@ export const en: Copy = {
     paidItems: [
       "Sharing with more family, like grandparents or a babysitter",
       "Reading PDFs and scans with several pages",
-      "Widgets on iPhone",
+      "Widgets on iPhone and Android",
       "Sharing handout photos with family (coming with the official release)",
       "More teacher links, and more handouts from teachers each month (a feature on the way)",
-      "The Mac app",
+      "The desktop app (Mac, with Windows on the way)",
       "No ads (the free plan may show ads)",
     ],
     footnote:
@@ -398,7 +398,7 @@ export const en: Copy = {
       },
       {
         q: "Which features will become paid?",
-        a: "After the official release, sharing with more family than your partner (grandparents or a babysitter, say), reading multi-page PDFs and scans, widgets on iPhone, sharing handout photos with family, more teacher links and more handouts from teachers each month, and the Mac app are planned for the paid plan, おたよりプラス (Otayori Plus). Prices and details will be announced once they're decided.",
+        a: "After the official release, sharing with more family than your partner (grandparents or a babysitter, say), reading multi-page PDFs and scans, widgets, sharing handout photos with family, more teacher links and more handouts from teachers each month, and the desktop app (Mac, and Windows once it's out) are planned for the paid plan, おたよりプラス (Otayori Plus). Prices and details will be announced once they're decided.",
       },
       {
         q: "Will there be ads?",
@@ -422,7 +422,7 @@ export const en: Copy = {
       },
       {
         q: "Are my photos or schedule sent anywhere?",
-        a: "Handouts are read on your device, so the photos and their text aren't sent anywhere to be read. If you sign in and share with family, your schedule is stored on servers in Tokyo. On Android, Google's ML Kit, which does the reading, sends Google diagnostics.",
+        a: "Handouts are read on your device, so the photos and their text aren't sent anywhere to be read. If you sign in and share with family, your schedule is stored on servers in Tokyo. On Android, Google's ML Kit, which does the scanning and reading, sends Google diagnostics.",
       },
       {
         q: "Do I need an account?",
@@ -439,6 +439,10 @@ export const en: Copy = {
       {
         q: "Which devices can use Ask about your handouts?",
         a: "iPhone, Android and Mac. With Apple Intelligence (iPhone on iOS 26 or later, Mac on macOS 26 or later) you can ask in your own words; on other devices, answers come as quick lists from your schedule and handouts. Both are free, and what you ask never leaves the device.",
+      },
+      {
+        q: "Does it work on a Windows PC?",
+        a: "A Windows version is on the way. For now, the computer app is for Mac (macOS 14 or later), and you start it by scanning a QR code with your signed-in phone. We'll announce it on this page when Windows is ready.",
       },
       {
         q: "Does it translate handouts into English?",
