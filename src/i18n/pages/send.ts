@@ -1,20 +1,21 @@
 /**
  * The send page (/send/, /en/send/): a teacher sends handouts straight to one family's app, from a link the parent
  * made in the app. Texts come from the app repo's docs/plans/S1-school-links.md ("Send page spec").
- * TODO(ja-review): the whole page, and especially the texts marked "not in the spec".
+ * The Japanese was reviewed on 2026-11-13; keep the spec's table in step when a text changes.
  * `%label%`, `%file%`, `%n%` and `%total%` are filled in by src/scripts/send.ts.
  */
 export const ja = {
   title: "おたよりを送る｜おたよりん",
-  description: "保護者の方へ、PDFや写真のおたよりを送るページです。アプリやアカウントは要りません。",
+  description: "保護者の方へ、PDFや写真のおたよりを送るページです。アプリやアカウントは必要ありません。",
   heading: "おたよりを送る",
   switchHref: "/en/send/",
   privacyHref: "/privacy/",
   // Texts the script shows.
   text: {
     loading: "確認しています…",
-    readyHeading: "「%label%」へおたよりを送る",
-    readyBody: "PDFや写真を選ぶか、ここにドロップしてください（1件10MBまで、10件まで）。",
+    // The label names the sender (「さくら組 田中先生」, 「ピアノ教室」), so it says whose link this is, not who receives.
+    readyFor: "保護者の方が「%label%」用に作ったリンクです。", // replaces the spec's 「「%label%」へおたよりを送る」
+    readyBody: "PDFや写真をお選びいただくか、ここにドロップしてください（1件10MBまで、10件まで）。",
     choose: "ファイルを選ぶ", // not in the spec
     files: "送るファイル", // not in the spec
     remove: "%file%を外す", // not in the spec
@@ -30,10 +31,10 @@ export const ja = {
     noFiles: "送るファイルを選んでください。", // not in the spec
     tooManyFiles: "一度に送れるのは10件までです。", // not in the spec
     sendingOff: "ただいま送信を受け付けていません。しばらくしてからお試しください。",
-    cannotReceive: "ただいま受け付けできません。お手数ですが、紙でお渡しいただくか、しばらくしてからお試しください。",
-    tooMany: "短い時間に多く送られたため、しばらくしてからお試しください。",
+    cannotReceive: "ただいま受け付けられません。お手数ですが、紙でお渡しいただくか、しばらくしてからお試しください。",
+    tooMany: "短い時間に送信が多かったため、少し時間をおいてからお試しください。",
     network: "送信できませんでした。もう一度お試しください。",
-    privacyNote: "送ったファイルはこのご家族だけに届き、受け取られた後、または14日後にサーバーから削除されます。",
+    privacyNote: "送ったファイルはこのご家族だけに届き、受け取ったあと、または14日後にサーバーから削除されます。",
     privacyLink: "プライバシーポリシー",
     noscript: "このページを使うには、JavaScriptを有効にしてください。", // not in the spec
     kilobytes: "KB",
@@ -52,7 +53,7 @@ export const en: SendCopy = {
   privacyHref: "/en/privacy/",
   text: {
     loading: "Checking…",
-    readyHeading: "Send handouts to “%label%”",
+    readyFor: "A parent made this link for “%label%”.",
     readyBody: "Choose PDFs or photos, or drop them here (up to 10 MB each, 10 at a time).",
     choose: "Choose files",
     files: "Files to send",

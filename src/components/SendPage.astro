@@ -45,7 +45,8 @@ const textJson = JSON.stringify(t).replace(/</g, "\\u003c");
 >
   <Header copy={copy} switchHref={send.switchHref} bare />
   <main id="main" class="send">
-    <h1 id="send-heading">{send.heading}</h1>
+    <h1>{send.heading}</h1>
+    <p id="send-for" class="for"></p>
     <p id="send-status" class="status" role="status"></p>
     <p id="send-alert" class="alert" role="alert"></p>
     <noscript>
@@ -119,11 +120,15 @@ const textJson = JSON.stringify(t).replace(/</g, "\\u003c");
     padding: 32px var(--gutter) 64px;
   }
 
-  /* The heading carries the parent's own label for the sender, in any characters, so it uses the body font rather
-     than the subset heading font. */
   h1 {
-    font-family: var(--font-body);
     font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+  }
+
+  /* Says whose link this is. It carries the parent's own label, in any characters, so it keeps the body font. */
+  .for:not(:empty) {
+    margin-block-start: 8px;
+    font-size: 1.125rem;
+    font-weight: 700;
   }
 
   .status:not(:empty) {

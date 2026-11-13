@@ -4,9 +4,9 @@ Primary queries are hypotheses until Search Console data says otherwise. Facts c
 
 ## Pages
 
-| Page (ja / en) | Type | Primary query (ja)                                    | Primary query (en)               | Ledger facts used                                          | Status                   | Updated    |
-| -------------- | ---- | ----------------------------------------------------- | -------------------------------- | ---------------------------------------------------------- | ------------------------ | ---------- |
-| `/` , `/en/`   | Home | 学校 プリント 管理 アプリ (also おたより 管理 アプリ) | app for Japanese school handouts | all core functions, early access and planned paid features | redesigned, not deployed | 2026-11-05 |
+| Page (ja / en) | Type | Primary query (ja)                                    | Primary query (en)               | Ledger facts used                                                                          | Status                   | Updated    |
+| -------------- | ---- | ----------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------ | ---------- |
+| `/` , `/en/`   | Home | 学校 プリント 管理 アプリ (also おたより 管理 アプリ) | app for Japanese school handouts | all core functions, teacher links (on the way, §7), early access and planned paid features | redesigned, not deployed | 2026-11-13 |
 
 ## Next pages, in priority order
 

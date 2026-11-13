@@ -9,6 +9,8 @@ interface Props {
   bullets?: string[];
   note?: string;
   platforms: string[];
+  /** Shown for a feature that isn't out yet ("今後対応予定" / "On the way"). */
+  soon?: string;
   /** Colour of the media block or icon. */
   tone: "coral" | "sky" | "amber" | "teal";
   icon?: string;
@@ -20,7 +22,20 @@ interface Props {
   layout?: "stack" | "wide";
 }
 
-const { id, title, body, bullets, note, platforms, tone, icon, paid, media = "panel", layout = "stack" } = Astro.props;
+const {
+  id,
+  title,
+  body,
+  bullets,
+  note,
+  platforms,
+  soon,
+  tone,
+  icon,
+  paid,
+  media = "panel",
+  layout = "stack",
+} = Astro.props;
 const hasMedia = Astro.slots.has("default");
 ---
 
@@ -33,6 +48,7 @@ const hasMedia = Astro.slots.has("default");
     )}
     <h3>{title}</h3>
     <p class="platforms">
+      {soon && <span class="chip chip-soon">{soon}</span>}
       {platforms.map((platform) => (
         <span class="chip">{platform}</span>
       ))}

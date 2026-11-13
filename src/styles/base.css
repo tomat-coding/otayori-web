@@ -147,6 +147,12 @@ a {
   white-space: normal;
 }
 
+/* A feature that isn't out yet. */
+.chip-soon {
+  background: var(--amber-soft);
+  color: var(--amber-ink);
+}
+
 a.chip-paid:hover {
   text-decoration: underline;
 }

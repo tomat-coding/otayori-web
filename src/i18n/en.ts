@@ -278,6 +278,29 @@ export const en: Copy = {
         singleBody: "Due tomorrow",
       },
     },
+    teachers: {
+      title: "Handouts sent straight from teachers",
+      soon: "On the way",
+      body: "Give a teacher or a lessons class a link, and they can send handouts (PDFs or photos) straight to the app. They open the link in any browser and choose the file. Nothing to install, no sign-up.",
+      bullets: [
+        "Handouts arrive on Home, with the teacher's name and message",
+        "Read them into the usual check screen, and add them once you've checked",
+        "A link and QR code for each sender: school, nursery, lessons",
+        "Stop a link any time you no longer need it",
+      ],
+      note: "Anyone with a link can send through it, so give links only to people you trust. Making a link needs an account. Files are deleted from our server once you've received them, or after 14 days. Whether a teacher can send files this way depends on the school's or nursery's own rules.",
+      platforms: ["iPhone", "Android", "Mac"],
+      mock: {
+        label:
+          "Example of handouts received on Home: a school trip notice from Ms Tanaka of Sakura class, and a recital notice from piano lessons",
+        title: "Handouts received: 2",
+        entries: [
+          { sender: "田中 · さくら組", file: "遠足のお知らせ.pdf", message: "“金曜の持ち物も書いてあります”" },
+          { sender: "ピアノ教室", file: "発表会のご案内.jpg", message: "" },
+        ],
+        read: "Read",
+      },
+    },
     small: [
       {
         icon: "qr",
@@ -358,6 +381,7 @@ export const en: Copy = {
       "Reading PDFs and scans with several pages",
       "Widgets on iPhone",
       "Sharing handout photos with family (coming with the official release)",
+      "More teacher links, and more handouts from teachers each month (a feature on the way)",
       "The Mac app",
       "No ads (the free plan may show ads)",
     ],
@@ -374,7 +398,7 @@ export const en: Copy = {
       },
       {
         q: "Which features will become paid?",
-        a: "After the official release, sharing with more family than your partner (grandparents or a babysitter, say), reading multi-page PDFs and scans, widgets on iPhone, sharing handout photos with family, and the Mac app are planned for the paid plan, おたよりプラス (Otayori Plus). Prices and details will be announced once they're decided.",
+        a: "After the official release, sharing with more family than your partner (grandparents or a babysitter, say), reading multi-page PDFs and scans, widgets on iPhone, sharing handout photos with family, more teacher links and more handouts from teachers each month, and the Mac app are planned for the paid plan, おたよりプラス (Otayori Plus). Prices and details will be announced once they're decided.",
       },
       {
         q: "Will there be ads?",

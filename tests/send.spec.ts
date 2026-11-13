@@ -31,9 +31,21 @@ async function mock(page: Page, look: Answer, posts: Answer[] = [{ status: 200, 
 
 const ready = { status: 200, body: { label: "ピアノ教室" } };
 
-for (const { path, lang, heading, other } of [
-  { path: withBase("/send/"), lang: "ja", heading: "「ピアノ教室」へおたよりを送る", other: withBase("/en/send/") },
-  { path: withBase("/en/send/"), lang: "en", heading: "Send handouts to “ピアノ教室”", other: withBase("/send/") },
+for (const { path, lang, heading, owner, other } of [
+  {
+    path: withBase("/send/"),
+    lang: "ja",
+    heading: "おたよりを送る",
+    owner: "保護者の方が「ピアノ教室」用に作ったリンクです。",
+    other: withBase("/en/send/"),
+  },
+  {
+    path: withBase("/en/send/"),
+    lang: "en",
+    heading: "Send handouts",
+    owner: "A parent made this link for “ピアノ教室”.",
+    other: withBase("/send/"),
+  },
 ]) {
   test.describe(path, () => {
     test("shows who the link is for, privately and accessibly", async ({ page }) => {
@@ -42,6 +54,7 @@ for (const { path, lang, heading, other } of [
       await expect(page.locator("html")).toHaveAttribute("lang", lang);
       await expect(page.locator("h1")).toHaveCount(1);
       await expect(page.locator("h1")).toHaveText(heading);
+      await expect(page.locator("#send-for")).toHaveText(owner);
       expect(calls.gets).toEqual([`${SEND_HANDOUT_URLS.prod}?token=${TOKEN}`]);
       await expect(page.locator("meta[name='robots']")).toHaveAttribute("content", "noindex");
       await expect(page.locator("meta[name='referrer']")).toHaveAttribute("content", "no-referrer");
@@ -67,7 +80,7 @@ test("loads no third-party scripts and isn't in the sitemap", async ({ page, req
   const hosts = new Set<string>();
   page.on("request", (req) => hosts.add(new URL(req.url()).host));
   await page.goto(`${withBase("/send/")}#${TOKEN}`);
-  await expect(page.locator("h1")).toContainText("ピアノ教室");
+  await expect(page.locator("#send-for")).toContainText("ピアノ教室");
   expect([...hosts].sort()).toEqual([new URL(page.url()).host, new URL(SEND_HANDOUT_URLS.prod).host].sort());
   const sitemap = await (await request.get(withBase("/sitemap-0.xml"))).text();
   expect(sitemap).not.toContain("/send/");
@@ -76,7 +89,7 @@ test("loads no third-party scripts and isn't in the sitemap", async ({ page, req
 test("uses the dev function only for ?project=dev", async ({ page }) => {
   const calls = await mock(page, ready);
   await page.goto(`${withBase("/send/")}?project=dev#${TOKEN}`);
-  await expect(page.locator("h1")).toContainText("ピアノ教室");
+  await expect(page.locator("#send-for")).toContainText("ピアノ教室");
   expect(calls.gets).toEqual([`${SEND_HANDOUT_URLS.dev}?token=${TOKEN}`]);
 });
 
@@ -99,8 +112,8 @@ for (const { name, look, message } of [
     message: "このリンクは使えません",
   },
   { name: "sending switched off", look: { status: 503, body: { error: "sending_off" } }, message: "ただいま送信を" },
-  { name: "a gateway error", look: { status: 502 }, message: "ただいま受け付けできません" },
-  { name: "a restricted project", look: { status: 402, body: { error: "x" } }, message: "ただいま受け付けできません" },
+  { name: "a gateway error", look: { status: 502 }, message: "ただいま受け付けられません" },
+  { name: "a restricted project", look: { status: 402, body: { error: "x" } }, message: "ただいま受け付けられません" },
 ]) {
   test(`explains ${name} when opening the link`, async ({ page }) => {
     await mock(page, look);

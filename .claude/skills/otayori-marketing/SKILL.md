@@ -56,7 +56,7 @@ Follow `references/site-implementation.md`: copy goes in the i18n files or page 
 
 ### 6. Verify
 
-Run `npm run format`, then `npm run build`, `npm run lint` and `npm test`. Fix what fails. Then preview (`site` config in `.claude/launch.json`) and check the rendered page: title, description, canonical, hreflang, JSON-LD, headings, internal links, and how it looks at phone width. Run the checklist at the end of `references/seo.md`.
+Check the Japanese you wrote with the `japanese-audit` skill (at least its `scripts/check-ja.mjs` and checklist). Run `npm run format`, then `npm run build`, `npm run lint` and `npm test`. Fix what fails. Then preview (`site` config in `.claude/launch.json`) and check the rendered page: title, description, canonical, hreflang, JSON-LD, headings, internal links, and how it looks at phone width. Run the checklist at the end of `references/seo.md`.
 
 ### 7. Report and record
 

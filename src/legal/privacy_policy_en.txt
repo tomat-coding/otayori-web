@@ -1,6 +1,6 @@
 Otayorin Privacy Policy
 
-Last updated: November 5, 2026
+Last updated: November 9, 2026
 
 1. Our approach
 Otayorin (the iPhone, Android and Mac apps and the servers behind them; "the app") helps you photograph or import handouts from school or nursery and keep track of the dates, things to bring and forms to hand in.
@@ -28,6 +28,12 @@ While you use the app without signing in, its information is stored only on your
 (4) If you use Otayori Plus (the paid plan)
 - Your plan and a record of the purchase (store, product, the store's transaction ID, expiry and status)
 - We never receive your payment details, such as card numbers
+(5) If you receive handouts from teachers through "Where handouts come from"
+- The name you give each link, and the link's address (a random code)
+- Handouts sent through a link (PDFs and photos), with the sender's name and message if they wrote them. They are kept until one of your family's devices has received them, then deleted within a day; ones nobody receives are deleted after 14 days
+- To prevent misuse, a value derived from the sender's IP address (a hash), deleted after a day
+- For the free plan's limit, a record of how many handouts you received each month (not their contents)
+- Anyone who has a link can send handouts through it, so give links only to people you trust. You can stop a link at any time
 
 4. Why it is used
 Information is used only to:
@@ -35,6 +41,7 @@ Information is used only to:
 - Sign you in and confirm it is you
 - Keep your devices signed in to the same account in step, share with your family, notify your partner and let you use the app on a computer
 - Provide the paid plan and confirm purchases
+- Deliver handouts sent through your "Where handouts come from" links to your family
 - Prevent misuse and excessive load, deal with faults and answer enquiries
 - Tell you about important matters such as changes to this policy or the Terms of Use
 It is never used for advertising, marketing or training AI.

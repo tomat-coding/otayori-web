@@ -137,6 +137,20 @@ Screenshots: `ios-home.png`, `android-home.png`, `desktop-home.png`, `ios-calend
 
 Screenshots: `ios-documents.png`, `mac-ask.png`.
 
+### 7. Handouts sent straight from teachers (先生から届くおたより, S1)
+
+Source: app repo `docs/plans/S1-school-links.md`, `docs/release/features.md` §16 (2026-11-13), strings `links_*` and `received_*`. Checked 2026-11-13 against commit `1f54842` plus the uncommitted S1 plan work.
+
+| Fact                                                                                                                                          | Status        | Caveat                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Family → 「プリントの届け先」: make a link and QR code per sender (school, nursery, lessons), named by the parent; 「リンクを送る」 shares it | coming        | Needs sign-in. Built; the website's send page and the prod server setup are pending. Say 今後対応予定 / "on the way" |
+| Teachers open the link in any browser and send PDFs or photos (JPG, PNG, HEIC), with an optional name and message; no app, no account         | coming        | 10 MB a file. Never imply schools endorse or use the app; some schools have rules about outside services             |
+| Handouts arrive on Home (and the Mac inbox) as 「届いたおたより N件」 with who sent them; 「読み取る」 reads them into the usual review       | coming        | iPhone, Android, Mac                                                                                                 |
+| Rename or stop a link any time; stopped links no longer work                                                                                  | coming        |                                                                                                                      |
+| Files are deleted from the server once received, or after 14 days                                                                             | coming        | Files pass through the Tokyo server (private storage) until received; this is not on-device only                     |
+| "Anyone with the link can send", so parents give links only to people they trust                                                              | coming        | Required wording (features.md)                                                                                       |
+| Free plan: 1 link, 5 handouts a month; Plus: up to 20 links, no monthly count                                                                 | planned-terms | Don't publish the numbers. The site may say it "may become partly paid" (added 2026-11-13, see Business terms)       |
+
 ## Mac app
 
 | Fact                                                                                                                      | Status        | Caveat            |
@@ -183,7 +197,7 @@ Screenshots: `ios-documents.png`, `mac-ask.png`.
 **Approved for the site (2026-11-05):** say that some features may move to a paid plan, おたよりプラス (Otayori Plus), after the official release, and name them, without prices or limits:
 
 - Planned to stay free: reading handouts, the calendar and checklists, reminders, saving and searching handouts, おたよりに質問 (free and unlimited on every plan, decided 2026-11-06), sharing the schedule with your partner.
-- May become paid: sharing with more family than your partner (grandparents, a babysitter), multi-page PDFs and scans, iPhone widgets, sharing handout photos with family (coming with the official release), the Mac app, and being ad-free. "One plan per household" may be said as planned.
+- May become paid: sharing with more family than your partner (grandparents, a babysitter), multi-page PDFs and scans, iPhone widgets, sharing handout photos with family (coming with the official release), the Mac app, and being ad-free. Added 2026-11-13 (not yet confirmed by the user): more teacher links and more handouts from teachers each month, since the free plan will limit both. "One plan per household" may be said as planned.
 - **Ads (2026-11-06):** the app is ad-free now, but the free plan may show ads after the official release (the app repo says 2027; don't publish a date). Say "ad-free during early access" or 「いまは広告なし」, and that おたよりプラス is planned to stay ad-free. Never "no ads" without that condition, and never "no ads, ever" / 広告は一切ありません. "No tracking, no analytics" is still true; revisit it if an ad network is ever added.
 - **Family size:** up to 6 during early access (server cap). Planned: the free plan covers you and your partner, Plus up to 6. Describe it as "partner free, more family with Plus"; don't publish "2" until plans are live.
 - Don't point out what Android lacks or does less well (vertical text, Ask about your handouts, widgets) and don't say "on the way": the user plans to ship them (2026-11-06). Name the requirement for the platforms that have the feature ("iOS 26 or macOS 26") and stop there; still never claim Android has it.

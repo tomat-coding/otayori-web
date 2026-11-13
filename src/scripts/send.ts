@@ -20,7 +20,7 @@ type Reply = { label?: unknown; ok?: unknown; error?: unknown } | null;
 type Outcome = { kind: "sent" } | { kind: "rejected" } | { kind: "stop"; message: keyof SendText };
 
 const text = JSON.parse(document.getElementById("send-text")!.textContent!) as SendText;
-const heading = document.getElementById("send-heading")!;
+const forLine = document.getElementById("send-for")!;
 const status = document.getElementById("send-status")!;
 const alert = document.getElementById("send-alert")!;
 const form = document.getElementById("send-form") as HTMLFormElement;
@@ -80,7 +80,7 @@ async function lookUp(url: string, token: string) {
   const answer = await call(`${url}?token=${encodeURIComponent(token)}`);
   const label = typeof answer?.body?.label === "string" ? answer.body.label.trim() : "";
   if (answer?.status === 200 && label) {
-    heading.textContent = fill(text.readyHeading, { label });
+    forLine.textContent = fill(text.readyFor, { label });
     say("");
     form.hidden = false;
     setUp(url, token);

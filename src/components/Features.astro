@@ -14,10 +14,11 @@ interface Props {
 }
 
 const { features } = Astro.props;
-const { week, calendar, ask, documents, reminders, small } = features;
+const { week, calendar, ask, documents, reminders, teachers, small } = features;
 const [share, calendarApp, widgets] = small;
 const phoneSizes = "(min-width: 1100px) 240px, (min-width: 900px) 24vw, 60vw";
 const mock = reminders.mock;
+const inbox = teachers.mock;
 ---
 
 <section id="features" class="page" aria-labelledby="features-title">
@@ -118,6 +119,42 @@ const mock = reminders.mock;
             <p>{mock.singleBody}</p>
           </div>
         </div>
+      </div>
+    </FeatureTile>
+  </div>
+
+  <div class="wide-row">
+    <FeatureTile
+      id="from-teachers"
+      title={teachers.title}
+      body={teachers.body}
+      bullets={teachers.bullets}
+      note={teachers.note}
+      platforms={teachers.platforms}
+      soon={teachers.soon}
+      tone="coral"
+      icon="inbox"
+      layout="wide"
+      paid={{ label: features.paidChip, href: "#early-access" }}
+    >
+      <!-- The app's 「届いたおたより」 card on Home (ReceivedHandoutsCard), drawn in CSS so the text stays real. -->
+      <div class="received" role="img" aria-label={inbox.label}>
+        <p class="received-title">{inbox.title}</p>
+        <ul>
+          {inbox.entries.map((entry) => (
+            <li>
+              <span class="received-icon">
+                <img src={withBase("/favicon.svg")} alt="" width="18" height="18" />
+              </span>
+              <span class="received-text">
+                <span class="received-sender">{entry.sender}</span>
+                <span class="received-file">{entry.file}</span>
+                {entry.message && <span class="received-message">{entry.message}</span>}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <span class="received-read">{inbox.read}</span>
       </div>
     </FeatureTile>
   </div>
@@ -232,6 +269,77 @@ const mock = reminders.mock;
   }
 
   .title {
+    font-weight: 700;
+  }
+
+  .received {
+    display: grid;
+    gap: 12px;
+    inline-size: 100%;
+    padding: clamp(16px, 2.5vw, 24px);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    color: var(--ink);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .received p {
+    margin: 0;
+  }
+
+  .received-title {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .received ul {
+    display: grid;
+    gap: 10px;
+  }
+
+  .received li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding-block-start: 10px;
+    border-block-start: 1px solid var(--line);
+  }
+
+  .received-icon {
+    flex: none;
+    padding: 5px;
+    border-radius: 8px;
+    background: var(--coral-soft);
+  }
+
+  .received-text {
+    display: grid;
+    min-inline-size: 0;
+  }
+
+  .received-sender {
+    font-weight: 700;
+  }
+
+  .received-file {
+    overflow: hidden;
+    color: var(--muted);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .received-message {
+    color: var(--ink-soft);
+  }
+
+  .received-read {
+    justify-self: end;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background: var(--teal);
+    color: #fff;
     font-weight: 700;
   }
 </style>
