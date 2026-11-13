@@ -96,14 +96,14 @@ Screenshots: `ios-home.png`, `android-home.png`, `desktop-home.png`, `ios-calend
 
 ### 4. Reminders and widgets (忘れ物・出し忘れ防止)
 
-| Fact                                                                                                                               | Status        | Caveat                                                                     |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------------------------------------------------------------------------- |
-| Day-before reminder (default 20:00) and same-day morning reminder (default 7:30); the parent sets both times                       | shipped       | Times are per device                                                       |
-| Several reminders at the same moment arrive as one summary ("3 things for tomorrow")                                               | shipped       |                                                                            |
-| Reminder text shows only the item title, never children's names or notes, because it appears on the lock screen                    | shipped       |                                                                            |
-| iPhone widgets: home screen small and medium, lock screen rectangular, inline and circular; show today until 15:00, then tomorrow  | shipped       | Lock screen widgets never show children's names                            |
-| Reminders on Mac                                                                                                                   | not available | Reminders come from the phone                                              |
-| Android widget 「今日と明日」: one resizable home screen widget with today's items and things to bring, then tomorrow's from 15:00 | shipped       | Since 2026-11-07 (A2). Home screen only: no lock screen widgets on Android |
+| Fact                                                                                                                                                                                         | Status        | Caveat                                                                     |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------------------------------------------------------------------------- |
+| Day-before reminder (default 20:00) and same-day morning reminder (default 7:30); the parent sets both times                                                                                 | shipped       | Times are per device                                                       |
+| Several reminders at the same moment arrive as one summary ("3 things for tomorrow")                                                                                                         | shipped       |                                                                            |
+| Reminder text shows only the item title, never children's names or notes, because it appears on the lock screen                                                                              | shipped       |                                                                            |
+| iPhone widgets: home screen small and medium, lock screen rectangular, inline and circular; show today until 15:00, then tomorrow; medium also shows the next day with plans beside it       | shipped       | Lock screen widgets never show children's names                            |
+| Reminders on Mac                                                                                                                                                                             | not available | Reminders come from the phone                                              |
+| Android widget 「今日と明日」: one resizable home screen widget with today's items and things to bring, then tomorrow's from 15:00; at 4 × 2 or wider the next day with plans sits beside it | shipped       | Since 2026-11-07 (A2). Home screen only: no lock screen widgets on Android |
 
 ### 5. Share with family (家族で共有)
 
@@ -184,6 +184,14 @@ Source: app repo `docs/plans/S1-school-links.md`, `docs/release/features.md` §1
 | Delete all data on the device, or the account and all data, from Settings                                  | Deleting the account doesn't cancel a store subscription                                                                                                                                                                                        |
 | iPhone data is in the user's own iCloud or computer backup; Android cloud backup is off                    |                                                                                                                                                                                                                                                 |
 
+### Changing phones (機種変更)
+
+Source: the user, 2026-11-13. On the site as an FAQ.
+
+- **Signed in:** signing in on the new phone brings back the children, the schedule, checklist ticks and the handout list from the server. Not restored: handout photos (unless the handout was shared with the family; photo sharing is off in the preview), reminder times and each reminder's on/off (kept per phone; the new phone uses defaults), and a scan still on the review screen.
+- **Not signed in:** data is only on the phone. iPhone: moving to a new iPhone or an iCloud/Finder restore brings everything, photos included. Android: a direct phone-to-phone transfer keeps it (Android 12+); cloud backup is off, so a Google Drive restore brings nothing.
+- When photo sharing ships, update the FAQ: shared handouts' photos then come back after signing in.
+
 ## Business terms
 
 **Now (preview / early access):**
@@ -223,7 +231,7 @@ All fixed on 2026-11-05:
 3. **Vertical text on iPhone**: both languages say it's read only on iOS 26+, with manual entry on earlier versions.
 4. **Trust section**: says signing in saves the schedule to the account, separately from inviting family; also discloses ML Kit diagnostics on Android.
 5. **Mac**: QR sign-in from a signed-in phone, reminders arrive on the phone.
-6. **Widgets**: iPhone Home Screen and Lock Screen widgets.
+6. **Widgets**: Home Screen widgets on iPhone and Android, Lock Screen widgets on iPhone. Wide widgets show the next day with plans beside today (source: `MediumView` in `OtayoriWidgets.swift`, `Wide` in `NextDayWidget.kt`).
 7. **Added**: payments with amounts and method, change notices, repeating items, multi-page PDFs and scans, 明日の持ち物 progress, Mac month export, up to 6 family members, sign-in options; two new FAQ items (payments and change notices; family size).
 8. **JSON-LD category** kept as `LifestyleApplication`: Google's supported list has no productivity value, and the app rich result needs real ratings anyway, so the category has no visible effect.
 

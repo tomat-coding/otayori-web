@@ -5,6 +5,8 @@ import androidHome from "../assets/screens/android-home.png";
 import iosCalendar from "../assets/screens/ios-calendar.png";
 import iosDocuments from "../assets/screens/ios-documents.png";
 import macAsk from "../assets/screens/mac-ask.png";
+import iosWidget from "../assets/screens/ios-widget.png";
+import androidWidget from "../assets/screens/android-widget.png";
 import FeatureTile from "./FeatureTile.astro";
 import PhoneFrame from "./PhoneFrame.astro";
 import Screen from "./Screen.astro";
@@ -14,9 +16,13 @@ interface Props {
 }
 
 const { features } = Astro.props;
-const { week, calendar, ask, documents, reminders, teachers, small } = features;
+const { week, calendar, ask, documents, reminders, teachers, small, widgetShots } = features;
 const [share, calendarApp, widgets] = small;
 const phoneSizes = "(min-width: 1100px) 240px, (min-width: 900px) 24vw, 60vw";
+// The shots are cropped to the widget at the phones' own pixel density, so sizing them by their pixel width keeps
+// the text in both at the same size.
+const widgetImages = [iosWidget, androidWidget];
+const widestWidget = Math.max(...widgetImages.map((image) => image.width));
 const mock = reminders.mock;
 const inbox = teachers.mock;
 ---
@@ -159,6 +165,36 @@ const inbox = teachers.mock;
     </FeatureTile>
   </div>
 
+  <div class="wide-row">
+    <FeatureTile
+      id="widgets"
+      title={widgets.title}
+      body={widgets.body}
+      platforms={widgets.platforms}
+      tone="sky"
+      icon={widgets.icon}
+      layout="wide"
+      paid={{ label: features.paidChip, href: "#early-access" }}
+    >
+      <div class="widgets">
+        {widgetShots.map((shot, index) => {
+          const src = widgetImages[index];
+          return (
+            <figure class="widget" style={`--share: ${(src.width / widestWidget) * 100}%`}>
+              <Screen
+                src={src}
+                alt={shot.alt}
+                widths={[480, 960, src.width]}
+                sizes="(min-width: 1100px) 480px, (min-width: 860px) 42vw, 84vw"
+              />
+              <figcaption class="chip">{shot.platform}</figcaption>
+            </figure>
+          );
+        })}
+      </div>
+    </FeatureTile>
+  </div>
+
   <div class="small">
     <FeatureTile
       id="family-sharing"
@@ -174,15 +210,6 @@ const inbox = teachers.mock;
       platforms={calendarApp.platforms}
       tone="amber"
       icon={calendarApp.icon}
-    />
-
-    <FeatureTile
-      title={widgets.title}
-      body={widgets.body}
-      platforms={widgets.platforms}
-      tone="sky"
-      icon={widgets.icon}
-      paid={{ label: features.paidChip, href: "#early-access" }}
     />
   </div>
 </section>
@@ -208,6 +235,31 @@ const inbox = teachers.mock;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 16px;
     margin-block-start: 16px;
+  }
+
+  /* The widgets alone (wallpaper cut away), the same scale, each named under it. */
+  .widgets {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    inline-size: 100%;
+  }
+
+  .widget {
+    display: grid;
+    gap: 10px;
+    justify-items: center;
+    inline-size: var(--share);
+    margin: 0;
+  }
+
+  .widget :global(img) {
+    inline-size: 100%;
+    filter: drop-shadow(0 6px 16px rgb(31 79 122 / 18%));
+  }
+
+  .widget figcaption {
+    background: var(--surface);
   }
 
   .card {

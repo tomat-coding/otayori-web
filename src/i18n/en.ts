@@ -316,9 +316,19 @@ export const en: Copy = {
       },
       {
         icon: "widget",
-        title: "Today and tomorrow on your Home Screen",
-        body: "Widgets show today's items and what to get ready without opening the app, and switch to tomorrow after 3pm. On iPhone they work on the Lock Screen too.",
+        title: "Today and tomorrow on your home screen",
+        body: "Widgets show today's items and what to get ready without opening the app, and switch to tomorrow after 3pm. In the wide size, the next day with plans sits alongside. On iPhone they work on the Lock Screen too.",
         platforms: ["iPhone", "Android"],
+      },
+    ],
+    widgetShots: [
+      {
+        platform: "iPhone",
+        alt: "The Otayorin widget on an iPhone Home Screen: today's health check on the left, tomorrow's school trip and consent form on the right",
+      },
+      {
+        platform: "Android",
+        alt: "The Otayorin widget on an Android home screen: today's health check on the left, tomorrow's school trip and consent form on the right",
       },
     ],
   },
@@ -423,6 +433,10 @@ export const en: Copy = {
       {
         q: "Are my photos or schedule sent anywhere?",
         a: "Handouts are read on your device, so the photos and their text aren't sent anywhere to be read. If you sign in and share with family, your schedule is stored on servers in Tokyo. On Android, Google's ML Kit, which does the scanning and reading, sends Google diagnostics.",
+      },
+      {
+        q: "What happens to my data when I change phones?",
+        a: "If you're signed in, sign in with the same account on the new phone and your children, schedule, ticks and handout list come back. Handout photos don't move, and reminder times are kept per phone, so set them again. If you're not signed in, everything lives only on the phone. On iPhone, moving to a new iPhone or restoring from an iCloud or computer backup brings everything across, photos included. On Android, a direct phone-to-phone transfer (Android 12 or later) keeps it, but restoring from a Google Drive backup doesn't.",
       },
       {
         q: "Do I need an account?",
