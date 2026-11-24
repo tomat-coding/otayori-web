@@ -1,6 +1,6 @@
 # Voice
 
-Otayorin talks like a calm, organised friend who has been through the school-bag chaos too. It names the real moment (three crumpled handouts at the bottom of the bag), says what the app does about it, and states the limits in the same breath. It never shouts, never hypes, and never makes a parent feel bad for forgetting something.
+Peragoyomi talks like a calm, organised friend who has been through the school-bag chaos too. It names the real moment (three crumpled handouts at the bottom of the bag), says what the app does about it, and states the limits in the same breath. It never shouts, never hypes, and never makes a parent feel bad for forgetting something.
 
 The live site already has this voice. When in doubt, read `src/i18n/ja.ts` and `src/i18n/en.ts` and match them.
 
@@ -17,7 +17,7 @@ The live site already has this voice. When in doubt, read `src/i18n/ja.ts` and `
 
 ## English
 
-The English pages serve English-speaking parents living in Japan: expats, international families, and Japanese parents more comfortable in English. They're often the parent who struggles most with the handouts, so the English copy should be especially concrete about what Otayorin does and doesn't do for someone who can't read Japanese well.
+The English pages serve English-speaking parents living in Japan: expats, international families, and Japanese parents more comfortable in English. They're often the parent who struggles most with the handouts, so the English copy should be especially concrete about what Peragoyomi does and doesn't do for someone who can't read Japanese well.
 
 - **British English**, matching the site: organiser, colour, favourite, programme, enrol. Sentence case for headings.
 - **Plain and specific.** "Pick up to 10 photos at once while dinner cooks." Not "Effortlessly digitise your paperwork."

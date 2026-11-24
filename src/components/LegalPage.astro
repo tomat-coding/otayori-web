@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { copy, title, draftNotice, alternates } = Astro.props;
-// The app's policy titles already carry the name (「おたよりん プライバシーポリシー」).
+// The app's policy titles already carry the name (「ぺらごよみ プライバシーポリシー」).
 const documentTitle = title.includes(copy.siteName) ? title : `${title} | ${copy.siteName}`;
 ---
 

@@ -1,11 +1,11 @@
 ---
 name: japanese-audit
-description: Audit, proofread and fix the Japanese text of the Otayorin (おたよりん) website so it is correct, natural, consistent and makes sense, the way a careful native editor would leave it. Checks grammar, particles, kanji and kana spelling, word choice, keigo, punctuation, translation-sounding phrasing, consistency with the app's own UI terms, and whether each sentence says what it means. Use this skill whenever the user asks to check, review, proofread, correct, polish or "native-check" Japanese on the site (日本語チェック, 校正, 校閲, ネイティブチェック, 表記ゆれ, 敬語), asks whether some Japanese sounds natural or is grammatical, mentions TODO(ja-review), or has just written or changed Japanese copy and wants it checked, even if they don't say "audit". Writing new marketing pages is the otayori-marketing skill's job; this skill checks the Japanese it produces.
+description: Audit, proofread and fix the Japanese text of the Peragoyomi (ぺらごよみ) website so it is correct, natural, consistent and makes sense, the way a careful native editor would leave it. Checks grammar, particles, kanji and kana spelling, word choice, keigo, punctuation, translation-sounding phrasing, consistency with the app's own UI terms, and whether each sentence says what it means. Use this skill whenever the user asks to check, review, proofread, correct, polish or "native-check" Japanese on the site (日本語チェック, 校正, 校閲, ネイティブチェック, 表記ゆれ, 敬語), asks whether some Japanese sounds natural or is grammatical, mentions TODO(ja-review), or has just written or changed Japanese copy and wants it checked, even if they don't say "audit". Writing new marketing pages is the otayori-marketing skill's job; this skill checks the Japanese it produces.
 ---
 
 # Japanese audit
 
-The site's Japanese pages (`/`, `/send/`, the legal pages, 404) are the first thing most parents in Japan see of Otayorin. They read every word as natives, so one wrong particle, a sentence that sounds machine-translated, or two names for the same button costs trust the rest of the page has to win back. This skill's job is to find those problems, explain each one plainly, and fix them, without flattening the site's warm voice or changing what the copy claims.
+The site's Japanese pages (`/`, `/send/`, the legal pages, 404) are the first thing most parents in Japan see of Peragoyomi. They read every word as natives, so one wrong particle, a sentence that sounds machine-translated, or two names for the same button costs trust the rest of the page has to win back. This skill's job is to find those problems, explain each one plainly, and fix them, without flattening the site's warm voice or changing what the copy claims.
 
 The person you're working for may not be a native Japanese speaker. Write your explanations in English, quote the Japanese exactly, and say why the new version is better in terms they can check ("を marks the object, but できる takes が", "this reads like English 'allow you to'"), so they can trust the change without having to take it on faith.
 
@@ -75,7 +75,7 @@ Give one table per file, most serious first:
 
 | 場所                       | 現在                                 | 修正案                             | 種類   | Why                                                                                              |
 | -------------------------- | ------------------------------------ | ---------------------------------- | ------ | ------------------------------------------------------------------------------------------------ |
-| `404.astro:9` (page title) | ページが見つかりません \| おたよりん | ページが見つかりません｜おたよりん | 不統一 | Japanese titles on this site use the full-width bar with no spaces, as the home page title does. |
+| `404.astro:9` (page title) | ページが見つかりません \| ぺらごよみ | ページが見つかりません｜ぺらごよみ | 不統一 | Japanese titles on this site use the full-width bar with no spaces, as the home page title does. |
 
 - `場所` is the file and line, plus the copy key or section so it's findable after edits.
 - Quote only the part that changes, with enough around it to find it.
@@ -113,5 +113,5 @@ Tell the user briefly: how many findings by type, what you fixed, what's waiting
 - **Don't over-polish into keigo.** The landing page talks to parents in warm です・ます. Stacking お〜いただく and ございます makes it sound like a bank. The send page talks to teachers and can be a step more polite.
 - **Don't translate-check.** If the Japanese reads naturally and says the right thing, it doesn't matter that it isn't a literal rendering of the English.
 - **Don't change facts while fixing language.** 「早期アクセス期間中は無料」 keeps its condition; numbers (10枚, 10ページ, 10MB, 14日, 6人) must stay as the ledger says. If a sentence is wrong on the facts, flag it, don't quietly reword it.
-- **The brand is おたよりん.** おたより alone is the common word for a handout. A similar app is called おたよりー; never write that.
+- **The brand is ぺらごよみ**, the plan ぺらごよみプラス (renamed from おたよりん / おたよりプラス on 2026-11-24). おたより alone is the common word for a handout. おたよりん and おたよりー are other apps; never write them.
 - **Be honest about confidence.** If two forms are both acceptable and it's a matter of taste, say so rather than calling one an error. Where native speakers disagree (e.g. 「お伺いします」), say that too.

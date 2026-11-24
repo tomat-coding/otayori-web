@@ -9,7 +9,7 @@ Pick the type that matches the searcher's intent, then use its outline as a star
 - Edit the copy in `src/i18n/ja.ts` and `src/i18n/en.ts`. Arrays (`useCases.items`, `faq.items`, bullets) can grow without code changes; new keys or a new feature row need component work (see `site-implementation.md`).
 - Keep the hero to the one core promise. The `h1` currently targets the category (学校のおたよりを、家族のカレンダーに。) and the title targets 学校・保育園のプリント管理アプリ; change them only with a reason recorded in the content plan.
 - FAQ items flow into `FAQPage` JSON-LD automatically. Write questions as parents ask them, answers in two or three sentences, conditions included.
-- Use cases follow the existing pattern: a title that is the parent's moment, a body that says what Otayorin does about it.
+- Use cases follow the existing pattern: a title that is the parent's moment, a body that says what Peragoyomi does about it.
 
 ## Feature page `/features/<slug>/`
 
@@ -40,7 +40,7 @@ Outline:
 1. `h1`: the situation, not the app (「上の子は小学校、下の子は保育園。予定をひとつにまとめるには」)
 2. Lead: name the friction honestly and in detail; show you understand the week they're having
 3. How families handle it today and where it breaks (paper on the fridge, photos in the camera roll, a shared calendar someone has to type into)
-4. How Otayorin fits, feature by feature, each linked to its feature page, with screenshots
+4. How Peragoyomi fits, feature by feature, each linked to its feature page, with screenshots
 5. A walk through one realistic week (clearly a scenario, not a testimonial)
 6. Limits that matter to this family (e.g., Android vertical reading for a mixed-phone family)
 7. FAQ, CTA
@@ -56,7 +56,7 @@ Outline:
 1. `h1` matching the question
 2. The short answer in the first paragraph
 3. Practical, app-independent advice first: real methods (a single inbox tray, photographing then discarding, a weekly 10-minute check, what to keep and for how long)
-4. Where an app helps, and how Otayorin specifically does that step, with a screenshot and link to the feature page
+4. Where an app helps, and how Peragoyomi specifically does that step, with a screenshot and link to the feature page
 5. A checklist or table readers can use (e.g., what to keep, what to bin, by type of handout)
 6. FAQ, last-updated date, CTA
 
@@ -73,7 +73,7 @@ Outline:
 3. A glossary table: Japanese term, reading, meaning, what you need to do (提出物 teishutsubutsu: forms to hand in, usually by a deadline…)
 4. Typical handouts through the school year (入学, 遠足, 運動会, 保護者会, 個人面談, 夏休み…), with what each usually asks of parents
 5. Practical tips: ask the teacher or another parent, photo the handout before it disappears, check the deadline first
-6. How Otayorin helps, honestly: finds dates and things to bring and puts them on the calendar in an English app UI, but items stay in Japanese and it doesn't translate; pair with a partner or friend who reads Japanese via family sharing
+6. How Peragoyomi helps, honestly: finds dates and things to bring and puts them on the calendar in an English app UI, but items stay in Japanese and it doesn't translate; pair with a partner or friend who reads Japanese via family sharing
 7. FAQ, CTA
 
 Schema: `Article` + `BreadcrumbList`. Usually English only; a Japanese counterpart isn't needed, so no hreflang pair.
@@ -98,4 +98,4 @@ Write both Japanese and English localisations. Lead the description with the cor
 - Query names a situation → use-case page
 - Query asks how to do something → guide
 - Query is in English and about Japanese school life → English glossary guide
-- Nothing fits and the query is far from what Otayorin does → don't write it
+- Nothing fits and the query is far from what Peragoyomi does → don't write it

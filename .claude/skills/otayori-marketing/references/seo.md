@@ -1,4 +1,4 @@
-# SEO for Otayorin
+# SEO for Peragoyomi
 
 ## Contents
 
@@ -19,7 +19,7 @@
 - **English-speaking parents in Japan**, who face the same handouts with a language barrier. They search in English but copy Japanese words off the paper.
 - **App store searchers**, who never see the website. Store listing text is a separate job; see `page-types.md`.
 
-The app is おたよりん (Otayorin). Close to it: おたより, the common noun for school newsletters (〇〇だより), and おたよりー, a similar app. Searches for おたより mean "the newsletter", so category queries matter more than the brand. Branded demand will show up as おたよりん, おたよりん アプリ or Otayorin; everything else must be won on problem and category queries. The draft store keywords in the app repo's `docs/release/store-listing.md` (園だより, 学年だより, 学級通信…) are a good source of the handout names parents search.
+The app is ぺらごよみ (Peragoyomi), renamed from おたよりん on 2026-11-24 because another app already had that name. Close to the category: おたより, the common noun for school newsletters (〇〇だより), and similar apps (おたよりー, the other おたよりん). Searches for おたより mean "the newsletter", so category queries matter more than the brand. Branded demand will show up as ぺらごよみ, ぺらごよみ アプリ or Peragoyomi; everything else must be won on problem and category queries. The draft store keywords in the app repo's `docs/release/store-listing.md` (園だより, 学年だより, 学級通信…) are a good source of the handout names parents search.
 
 ## 2. Keyword research method
 
@@ -29,7 +29,7 @@ Do this for each page you plan, and write the result into the content plan.
 2. **List the words that parent would type**, in their words, not ours: 体操服 忘れた, 持ち物 忘れ 防止, 前日 リマインダー 子供. Include kana/kanji variants (お便り/おたより, 子供/子ども) and spoken forms.
 3. **Check the results page if you can search the web.** Note what ranks: app roundups (まとめ), personal blogs, Q&A threads (Yahoo!知恵袋, ママリ), store pages, news. The dominant type is the intent. A query answered by how-to blogs wants a guide, not a feature page. Note the "他の人はこちらも質問" questions and related searches; they become H2s and FAQ items.
 4. **Pick one primary query per page** and a few close variants. If another planned or live page already targets it, merge or differentiate rather than compete.
-5. **Be honest about data.** If no keyword tool or Search Console data is available, don't invent search volume or difficulty. Rank candidates by how closely the intent matches what Otayorin does and how weak the current results are, and say that's the basis.
+5. **Be honest about data.** If no keyword tool or Search Console data is available, don't invent search volume or difficulty. Rank candidates by how closely the intent matches what Peragoyomi does and how weak the current results are, and say that's the basis.
 
 ## 3. Seed keyword clusters
 
@@ -47,14 +47,14 @@ Hypotheses to validate with step 3 above, not measured data. The suggested page 
 | English: handouts in Japan    | Japanese school handouts, how to read Japanese school letters, Japanese school forms translate, hoikuen letters, otayori meaning | Informational, language barrier                  | English guide / glossary page                          |
 | English: specifics            | what to bring Japanese elementary school, mochimono list, teishutsubutsu, Japanese school payments shukin                        | Informational                                    | English glossary page                                  |
 | English: app                  | app for Japanese school handouts, Japanese school calendar app, organise school letters Japan                                    | Commercial                                       | English home and feature pages                         |
-| Brand                         | おたよりん, おたよりん アプリ, おたよりん 使い方, Otayorin app                                                                   | Navigational                                     | Home; a how-to-use guide later                         |
+| Brand                         | ぺらごよみ, ぺらごよみ アプリ, ぺらごよみ 使い方, Peragoyomi app                                                                 | Navigational                                     | Home; a how-to-use guide later                         |
 
-Note on "translate": English speakers will search for translation. Otayorin doesn't translate. Target these queries only with pages that explain the paperwork itself and say plainly what the app does and doesn't do.
+Note on "translate": English speakers will search for translation. Peragoyomi doesn't translate. Target these queries only with pages that explain the paperwork itself and say plainly what the app does and doesn't do.
 
 ## 4. On-page rules
 
 - **URL**: lowercase ASCII words joined by hyphens, the same slug in both languages, trailing slash: `/features/read-handouts/` and `/en/features/read-handouts/`. Short and stable; never change a published URL without a redirect.
-- **Title** (`<title>`): primary query near the front, brand at the end: `学校のプリント整理のコツと保管期間|おたよりん`. Japanese: aim for about 30 full-width characters, since longer gets cut. English: about 50 to 60 characters: `How to read Japanese school handouts | Otayorin`. Unique on every page.
+- **Title** (`<title>`): primary query near the front, brand at the end: `学校のプリント整理のコツと保管期間|ぺらごよみ`. Japanese: aim for about 30 full-width characters, since longer gets cut. English: about 50 to 60 characters: `How to read Japanese school handouts | Peragoyomi`. Unique on every page.
 - **Meta description**: a promise and a reason to click, in plain sentences. Japanese: about 80 to 120 characters, with the point in the first 50 because phones cut early. English: about 120 to 155 characters. Unique on every page. Include the main query naturally once.
 - **One `h1`** that says what the page is, close to the title but written for people.
 - **Answer first.** The first paragraph answers the query directly in two or three sentences. Then the detail. This serves readers, featured snippets and AI answers at once.
@@ -96,7 +96,7 @@ Keep it shallow: every page within two clicks of home.
 
 AI search answers (Google AI Overviews, chat assistants) quote pages that state facts clearly.
 
-- Name the entity plainly and consistently once per page: 「おたよりんは、学校や保育園のプリントを撮るだけで、日付・持ち物・提出物を家族のカレンダーにまとめるアプリです。」 / "Otayorin is an app for parents in Japan that turns photos of school and nursery handouts into one family calendar."
+- Name the entity plainly and consistently once per page: 「ぺらごよみは、学校や保育園のプリントを撮るだけで、日付・持ち物・提出物を家族のカレンダーにまとめるアプリです。」 / "Peragoyomi is an app for parents in Japan that turns photos of school and nursery handouts into one family calendar."
 - Put precise, checkable facts in text, not only in images: supported OS versions, what's free and until when, what's shared and where it's stored.
 - Keep the facts identical across pages, the stores and the FAQ. Contradictions make an answer engine distrust all of them.
 

@@ -1,8 +1,8 @@
 ---
-title: "Otayorin: deleting your account and data"
+title: "Peragoyomi: deleting your account and data"
 ---
 
-How to delete your Otayorin account (operated by Tomasz Matusik) and the data kept on our servers.
+How to delete your Peragoyomi account (operated by Tomasz Matusik) and the data kept on our servers.
 
 ## In the app
 

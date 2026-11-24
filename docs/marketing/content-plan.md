@@ -34,7 +34,7 @@ Ranked by how well the intent fits what the app does, how weak the current resul
 
 - The store listing (draft in the app repo's `docs/release/store-listing.md`) matters more than the website for these queries. Review it with this skill before submission.
 - On the site, lead with what's distinctive in the ledger rather than the basics everyone lists: 縦書き, change notices that update saved items, 集金 with amounts, a Mac app, iPhone and Android in one family with who-ticked-what.
-- Several app names sit very close to おたよりん in these results. Keep the name exact everywhere; never compare to or name other apps in copy.
+- Several app names sit very close to ぺらごよみ in these results. Keep the name exact everywhere; never compare to or name other apps in copy.
 
 ## Ideas not yet planned
 
@@ -52,5 +52,6 @@ Ranked by how well the intent fits what the app does, how weak the current resul
 - 2026-11-05: Sitemap locale changed from `ja-JP` to `ja`, matching the HTML `hreflang`.
 
 - 2026-11-05: Renamed the site to おたよりん / Otayorin to match the app. Home title now 「おたよりん|学校・保育園のおたより・プリント管理アプリ」 so it also carries おたより, the word parents search with.
+- 2026-11-24: Renamed the site to ぺらごよみ / Peragoyomi and the plan to ぺらごよみプラス / Peragoyomi Plus, because another app called おたよりん already did the same thing. Titles keep the same pattern: 「学校・保育園のおたより・プリント管理アプリ｜ぺらごよみ」 / "School handout organiser app for parents in Japan | Peragoyomi". New logo, favicons and share images; the URL path stays `/otayori-web/`.
 - 2026-11-05: Kept JSON-LD `applicationCategory` as `LifestyleApplication`, because Google has no productivity value.
 - 2026-11-05: Kept CSS as files rather than inlined, because the CSP forbids inline styles.

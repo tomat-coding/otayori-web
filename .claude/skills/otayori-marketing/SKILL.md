@@ -1,11 +1,11 @@
 ---
 name: otayori-marketing
-description: Plan, write and ship marketing content for the Otayorin (おたよりん, code name Otayori) website so Japanese and English-speaking parents find the app and download it. Covers finding and explaining the app's core features, use-case and feature pages, guides and articles, landing-page sections, FAQ, meta titles and descriptions, keyword research, structured data, SEO audits of the site, and App Store / Google Play listing text. Use this skill whenever the user asks for website copy, new pages, SEO, keywords, "attract users", content ideas, a content plan, feature descriptions, or wants the site to rank or convert better, even if they don't say "marketing" or "SEO".
+description: Plan, write and ship marketing content for the Peragoyomi (ぺらごよみ, code name Otayori) website so Japanese and English-speaking parents find the app and download it. Covers finding and explaining the app's core features, use-case and feature pages, guides and articles, landing-page sections, FAQ, meta titles and descriptions, keyword research, structured data, SEO audits of the site, and App Store / Google Play listing text. Use this skill whenever the user asks for website copy, new pages, SEO, keywords, "attract users", content ideas, a content plan, feature descriptions, or wants the site to rank or convert better, even if they don't say "marketing" or "SEO".
 ---
 
-# Otayorin marketing content
+# Peragoyomi marketing content
 
-Otayorin (おたよりん) turns photos of school and nursery handouts into one shared family calendar. The website (this repo, Astro, static, Japanese at `/`, English at `/en/`) is how most parents will first meet it. This skill's job is to make that site findable for what parents actually search, and convincing once they land, without ever claiming something the app doesn't do.
+Peragoyomi (ぺらごよみ) turns photos of school and nursery handouts into one shared family calendar. The website (this repo, Astro, static, Japanese at `/`, English at `/en/`) is how most parents will first meet it. This skill's job is to make that site findable for what parents actually search, and convincing once they land, without ever claiming something the app doesn't do.
 
 Three things make content here good, in this order:
 
@@ -68,9 +68,9 @@ Update `docs/marketing/content-plan.md` with each page's URL, target queries and
 
 ## Things that are easy to get wrong here
 
-- **The name.** The app and site are おたよりん / Otayorin (renamed from おたより / Otayori on 2026-11-05; see the ledger's Name section). おたより on its own is the common word for a handout, so use it freely as a word, never as the brand. A similar app, おたよりー, exists; spell おたよりん exactly and never mention the other.
+- **The name.** The app and site are ぺらごよみ / Peragoyomi, and the plan is ぺらごよみプラス / Peragoyomi Plus (renamed from おたよりん / Otayorin on 2026-11-24, because another app already had that name; see the ledger's Name section). Never write おたよりん or Otayorin for this app. おたより on its own is the common word for a handout, so use it freely as a word, never as the brand. Similar apps (おたよりー, the other おたよりん) exist; never mention them.
 - **"Free" and "unlimited" need their conditions.** Free during early access, may become paid. Unlimited means no app-side cap; device storage still applies. AI needs Apple Intelligence on iOS 26 or macOS 26. State the condition next to the claim, as the current site does.
-- **English-speaking parents will search for "translate".** Otayorin doesn't translate; items keep the handout's Japanese. Content for them should be honest about that and lead with what does help (dates, reminders, the bilingual app UI, a partner who reads Japanese sharing the calendar).
+- **English-speaking parents will search for "translate".** Peragoyomi doesn't translate; items keep the handout's Japanese. Content for them should be honest about that and lead with what does help (dates, reminders, the bilingual app UI, a partner who reads Japanese sharing the calendar).
 - **No invented proof.** No testimonials, user counts, ratings, awards, press quotes or "No.1" claims unless the user supplies real, attributable ones. Never add `aggregateRating` or `Review` markup without real reviews.
 - **No doorway pages.** Don't generate near-identical pages per city, school or keyword. Each page needs its own substance.
 - **Keep the landing page's tests green.** `tests/site.spec.ts` expects exactly `MobileApplication` and `FAQPage` JSON-LD on `/` and `/en/`, store links, one `h1` and no scripts.

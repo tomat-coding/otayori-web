@@ -1,7 +1,6 @@
 ---
 import { LINKS } from "../config";
 import type { Copy } from "../i18n/ja";
-import Icon from "./Icon.astro";
 
 interface Props {
   earlyAccess: Copy["earlyAccess"];
@@ -17,30 +16,6 @@ const [feedbackBefore, feedbackLink, feedbackAfter] = earlyAccess.feedback;
       <p class="badge">{earlyAccess.badge}</p>
       <h2 id="early-title">{earlyAccess.title}</h2>
       <p class="lead">{earlyAccess.lead}</p>
-    </div>
-    <div class="plans">
-      <div class="plan free">
-        <h3>{earlyAccess.freeTitle}</h3>
-        <ul>
-          {earlyAccess.freeItems.map((item) => (
-            <li>
-              <Icon name="check" size={18} />
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div class="plan paid">
-        <h3>{earlyAccess.paidTitle}</h3>
-        <ul>
-          {earlyAccess.paidItems.map((item) => (
-            <li>
-              <Icon name="plus" size={18} />
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
     <p class="footnote">{earlyAccess.footnote}</p>
     <!-- prettier-ignore -->
@@ -85,56 +60,6 @@ const [feedbackBefore, feedbackLink, feedbackAfter] = earlyAccess.feedback;
   .lead {
     margin-block-start: 12px;
     color: var(--ink-soft);
-  }
-
-  .plans {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-    gap: 16px;
-    max-inline-size: 960px;
-    margin: 32px auto 0;
-  }
-
-  .plan {
-    padding: clamp(18px, 4vw, 24px);
-    border-radius: var(--radius);
-    background: var(--surface);
-  }
-
-  .paid {
-    border: 2px dashed #e4b169;
-    background: rgb(255 255 255 / 60%);
-  }
-
-  h3 {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    line-height: 1.5;
-  }
-
-  ul {
-    display: grid;
-    gap: 8px;
-    margin-block-start: 14px;
-  }
-
-  li {
-    display: flex;
-    gap: 10px;
-    align-items: baseline;
-  }
-
-  li :global(svg) {
-    flex: none;
-    align-self: center;
-  }
-
-  .free li :global(svg) {
-    color: var(--teal);
-  }
-
-  .paid li :global(svg) {
-    color: var(--amber-ink);
   }
 
   .footnote,

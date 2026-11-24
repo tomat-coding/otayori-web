@@ -5,7 +5,7 @@
  * `%label%`, `%file%`, `%n%` and `%total%` are filled in by src/scripts/send.ts.
  */
 export const ja = {
-  title: "おたよりを送る｜おたよりん",
+  title: "おたよりを送る｜ぺらごよみ",
   description: "保護者の方へ、PDFや写真のおたよりを送るページです。アプリやアカウントは必要ありません。",
   heading: "おたよりを送る",
   switchHref: "/en/send/",
@@ -46,8 +46,8 @@ export type SendCopy = typeof ja;
 export type SendText = SendCopy["text"];
 
 export const en: SendCopy = {
-  title: "Send handouts | Otayorin",
-  description: "Send PDF or photo handouts to a family that uses Otayorin. No app or account needed.",
+  title: "Send handouts | Peragoyomi",
+  description: "Send PDF or photo handouts to a family that uses Peragoyomi. No app or account needed.",
   heading: "Send handouts",
   switchHref: "/send/",
   privacyHref: "/en/privacy/",

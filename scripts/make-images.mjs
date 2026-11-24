@@ -48,5 +48,5 @@ async function share(file, lines, size, siteName) {
     .toFile(file);
 }
 
-await share("public/og-ja.png", ["学校のおたよりを、", "家族のカレンダーに。"], 66, "おたよりん");
-await share("public/og-en.png", ["Turn school handouts", "into one family", "calendar"], 64, "Otayorin");
+await share("public/og-ja.png", ["学校のおたよりを、", "家族のカレンダーに。"], 66, "ぺらごよみ");
+await share("public/og-en.png", ["Turn school handouts", "into one family", "calendar"], 64, "Peragoyomi");

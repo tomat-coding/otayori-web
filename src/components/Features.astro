@@ -17,7 +17,7 @@ interface Props {
 
 const { features } = Astro.props;
 const { week, calendar, ask, documents, reminders, teachers, small, widgetShots } = features;
-const [share, calendarApp, widgets] = small;
+const [share, calendarApp, widgets, sendToFamily] = small;
 const phoneSizes = "(min-width: 1100px) 240px, (min-width: 900px) 24vw, 60vw";
 // The shots are cropped to the widget at the phones' own pixel density, so sizing them by their pixel width keeps
 // the text in both at the same size.
@@ -203,6 +203,14 @@ const inbox = teachers.mock;
       platforms={share.platforms}
       tone="coral"
       icon={share.icon}
+    />
+    <FeatureTile
+      id="send-to-family"
+      title={sendToFamily.title}
+      body={sendToFamily.body}
+      platforms={sendToFamily.platforms}
+      tone="sky"
+      icon={sendToFamily.icon}
     />
     <FeatureTile
       title={calendarApp.title}

@@ -2,11 +2,11 @@ import type { Copy } from "./ja";
 
 export const en: Copy = {
   lang: "en",
-  siteName: "Otayorin",
+  siteName: "Peragoyomi",
   meta: {
-    title: "School handout organiser app for parents in Japan | Otayorin",
+    title: "School handout organiser app for parents in Japan | Peragoyomi",
     description:
-      "Photograph school and nursery handouts. Otayorin finds the dates, things to bring, forms and payments for one family calendar. Free in early access.",
+      "Photograph school and nursery handouts. Peragoyomi finds the dates, things to bring, forms and payments for one family calendar. Free in early access.",
     ogTitle: "Turn school handouts into one family calendar",
     ogImage: "/og-en.png",
     ogLocale: "en_US",
@@ -35,16 +35,16 @@ export const en: Copy = {
     pill: "Early access: every feature free for now",
     kicker: "Just snap the handout.",
     title: ["Turn school handouts", "into one family calendar"],
-    lead: "Otayorin is an app for parents in Japan. Photograph a school or nursery handout and it finds the dates, the things to bring, the forms to hand in and the payments, then puts them on one calendar for the whole family.",
+    lead: "Peragoyomi is an app for parents in Japan. Photograph a school or nursery handout and it finds the dates, the things to bring, the forms to hand in and the payments, then puts them on one calendar for the whole family.",
     reassure: "Ad-free during early access. No account needed to start.",
     alts: {
-      calendar: "Otayorin on Android: the family calendar for November with Japanese holidays",
-      home: "Otayorin on iPhone: the next form to hand in at the top, then today's and tomorrow's items",
-      desktop: "Otayorin for Mac: the week's school items by day, with progress and recent handouts",
+      calendar: "Peragoyomi on Android: the family calendar for November with Japanese holidays",
+      home: "Peragoyomi on iPhone: the next form to hand in at the top, then today's and tomorrow's items",
+      desktop: "Peragoyomi for Mac: the week's school items by day, with progress and recent handouts",
     },
   },
   why: {
-    title: "Four things that make Otayorin different",
+    title: "Four things that make Peragoyomi different",
     items: [
       {
         icon: "phone",
@@ -58,20 +58,20 @@ export const en: Copy = {
       },
       {
         icon: "chat",
-        title: "Ask, free on every device",
-        body: 'Ask "What do we need tomorrow?" and get the answer from your handouts, with no limit, on any device.',
+        title: "Search and ask on every device",
+        body: 'Type 水筒 (water bottle) and every handout and plan that mentions it appears. Or ask "What do we need tomorrow?" Works on iPhone, Android and Mac.',
       },
       {
         icon: "family",
         title: "Shared with your partner",
-        body: "Both of you see the same schedule, even with an iPhone and an Android phone. Sharing is free.",
+        body: "Both of you see the same schedule, even with an iPhone and an Android phone.",
       },
     ],
   },
   useCases: {
     title: "Sound familiar?",
-    lead: "Handouts come home from school and nursery almost every week. Here's what Otayorin does in four moments most parents know.",
-    solutionLabel: "With Otayorin",
+    lead: "Handouts come home from school and nursery almost every week. Here's what Peragoyomi does in four moments most parents know.",
+    solutionLabel: "With Peragoyomi",
     items: [
       {
         icon: "camera",
@@ -148,7 +148,7 @@ export const en: Copy = {
       },
       {
         title: "Check it",
-        body: "Everything Otayorin finds is shown first. Anything unclear, like a hard-to-read date or a weekday that doesn't match, comes first with a one-tap fix. Only what you tick is added.",
+        body: "Everything Peragoyomi finds is shown first. Anything unclear, like a hard-to-read date or a weekday that doesn't match, comes first with a one-tap fix. Only what you tick is added.",
       },
       {
         title: "It's on the calendar",
@@ -157,15 +157,15 @@ export const en: Copy = {
     ],
     alts: {
       review:
-        "Otayorin's review screen: a consent form and an autumn trip with its packing list found in a trip notice, with each line highlighted on the scan",
-      home: "Otayorin on iPhone: Home with a consent form due tomorrow at the top, then today's and tomorrow's items",
+        "Peragoyomi's review screen: a consent form and an autumn trip with its packing list found in a trip notice, with each line highlighted on the scan",
+      home: "Peragoyomi on iPhone: Home with a consent form due tomorrow at the top, then today's and tomorrow's items",
     },
   },
   phrases: {
     title: "It knows how school handouts are written",
-    lead: "Japanese school and nursery handouts use the same phrases again and again. Otayorin turns each one into the right kind of item. Items keep the handout's Japanese wording: there's no translation.",
+    lead: "Japanese school and nursery handouts use the same phrases again and again. Peragoyomi turns each one into the right kind of item. Items keep the handout's Japanese wording: there's no translation.",
     paperLabel: "On the handout",
-    appLabel: "In Otayorin",
+    appLabel: "In Peragoyomi",
     items: [
       {
         phrase: "同意書を10月20日（火）までに提出してください",
@@ -213,11 +213,11 @@ export const en: Copy = {
       "Vertical text (縦書き)",
     ],
     note: "Vertical text is read on iPhone with iOS 26 or later and Mac with macOS 26 or later. Earlier versions can't read it, so you'd add those items by hand.",
-    alt: "Otayorin on iPhone: a reply slip and a parents' meeting with its date and things to bring, read from a vertical handout",
+    alt: "Peragoyomi on iPhone: a reply slip and a parents' meeting with its date and things to bring, read from a vertical handout",
   },
   features: {
     title: "After the reading, the rest of your week",
-    lead: "From packing for tomorrow to sharing with your partner, here's what Otayorin does day to day.",
+    lead: "From packing for tomorrow to sharing with your partner, here's what Peragoyomi does day to day.",
     paidChip: "May become partly paid later",
     week: {
       title: "This week, at a glance",
@@ -227,7 +227,7 @@ export const en: Copy = {
         "Mark items done (完了) when they're finished",
         "Filter to one child",
       ],
-      alt: "Otayorin on Android: Home with a consent form due tomorrow, then the week's items for each child",
+      alt: "Peragoyomi on Android: Home with a consent form due tomorrow, then the week's items for each child",
       platforms: ["iPhone", "Android", "Mac"],
     },
     calendar: {
@@ -242,22 +242,23 @@ export const en: Copy = {
       platforms: ["iPhone", "Android", "Mac"],
     },
     ask: {
-      title: "Ask about your handouts",
-      body: 'Ask "What do we need tomorrow?" or "What time do we meet for the trip?" and Otayorin answers from your schedule and your handouts. Type "Add gym clothes for Friday" and it drafts the item for you to confirm.',
+      title: "Search & ask",
+      body: 'Type 水筒 (water bottle) or 上履き (indoor shoes) and the handouts and plans that mention it appear as you type. Ask "What do we need tomorrow?" or "What time do we meet for the trip?" and Peragoyomi answers from your schedule and your handouts. Type "dentist tomorrow at 3pm" and it drafts the item for you to confirm.',
       bullets: [
-        "Free on every device, with no limit",
+        "Matches appear as you type: handouts, with the line that matched, and plans",
         "Answers link to the items and handouts they came from",
-        "Answers are made on your device, and questions aren't sent anywhere",
+        "Works on iPhone, Android and Mac",
+        "It all runs on your device: nothing you type is sent anywhere",
       ],
-      note: "On iPhone (iOS 26 or later) and Mac (macOS 26 or later) with Apple Intelligence, you can ask in your own words. On other devices, answers come as quick lists from your schedule and handouts. AI answers can be wrong, so check the handout too.",
+      note: "Handouts keep their Japanese, so search them with the Japanese word. Search works the same on every device. On iPhone (iOS 26 or later) and Mac (macOS 26 or later) with Apple Intelligence, you can ask in your own words; on other devices, answers come as quick lists from your schedule and handouts. AI answers can be wrong, so check the handout too.",
       alt: "A question about what to bring on the autumn trip, answered with a link to the item",
       platforms: ["iPhone", "Android", "Mac"],
     },
     documents: {
-      title: "Lost the paper? It's still here",
-      body: "Every handout you snap is kept in Documents. Search by title or by any word in the handout, and zoom into the original whenever you need it.",
+      title: "Throw the paper away. Even the fine print is here at a glance",
+      body: "Every handout you snap is kept in Documents. Open one and it starts with what to do (forms, payments, things to bring) and the key points: what to wear, the rain plan, pickup times, requests from the school. Search by title or by any word in the handout, and zoom into the original whenever you need it.",
       bullets: [
-        "Search the words inside your handouts",
+        "To do and Key points are picked out on your device, in the handout's own Japanese. Tap one to see it in the original",
         "Jump from any item back to its handout",
         "Multi-page PDFs stay together as one handout",
       ],
@@ -270,7 +271,7 @@ export const en: Copy = {
       platforms: ["iPhone", "Android"],
       mock: {
         label: "Example lock screen notifications: 3 things for tomorrow, and a consent form due tomorrow",
-        app: "Otayorin",
+        app: "Peragoyomi",
         time: "20:00",
         summary: "3 things for tomorrow",
         summaryBody: "体操服, 水筒 and 1 more",
@@ -305,13 +306,13 @@ export const en: Copy = {
       {
         icon: "qr",
         title: "Share the schedule with your partner",
-        body: "Invite family with a code, link or QR code. New items and every tick show up on everyone's phone, with who ticked what. Sharing with your partner is planned to stay free.",
+        body: "Invite family with a code, link or QR code. New items and every tick show up on everyone's phone, with who ticked what.",
         platforms: ["iPhone", "Android", "Mac"],
       },
       {
         icon: "calendarPlus",
         title: "Add it to the calendar you already use",
-        body: "Send any item to your iPhone or Android calendar in one tap, without giving Otayorin access to your calendar. On the Mac, export a whole month at once.",
+        body: "Send any item to your iPhone or Android calendar in one tap, without giving Peragoyomi access to your calendar. On the Mac, export a whole month at once.",
         platforms: ["iPhone", "Android", "Mac"],
       },
       {
@@ -320,15 +321,21 @@ export const en: Copy = {
         body: "Widgets show today's items and what to get ready without opening the app, and switch to tomorrow after 3pm. In the wide size, the next day with plans sits alongside. On iPhone they work on the Lock Screen too.",
         platforms: ["iPhone", "Android"],
       },
+      {
+        icon: "send",
+        title: "For family without the app",
+        body: "Send to family turns a handout's to-dos or tomorrow's plan into a message you can paste straight into LINE or Messages. Grandparents don't need the app or an account to read it.",
+        platforms: ["iPhone", "Android", "Mac"],
+      },
     ],
     widgetShots: [
       {
         platform: "iPhone",
-        alt: "The Otayorin widget on an iPhone Home Screen: today's health check on the left, tomorrow's school trip and consent form on the right",
+        alt: "The Peragoyomi widget on an iPhone Home Screen: today's health check on the left, tomorrow's school trip and consent form on the right",
       },
       {
         platform: "Android",
-        alt: "The Otayorin widget on an Android home screen: today's health check on the left, tomorrow's school trip and consent form on the right",
+        alt: "The Peragoyomi widget on an Android home screen: today's health check on the left, tomorrow's school trip and consent form on the right",
       },
     ],
   },
@@ -339,7 +346,7 @@ export const en: Copy = {
     mac: {
       title: "The Mac app, in early access too",
       body: "See the week, the month and all your handouts on a big screen. Drag PDFs and photos from email straight into the window. Sign in by scanning a QR code with your signed-in phone. Reminders come to your phone. A Windows version is on the way.",
-      alt: "Otayorin for Mac: the month calendar, with the selected day's items beside it",
+      alt: "Peragoyomi for Mac: the month calendar, with the selected day's items beside it",
     },
     needsLabel: "Requirements",
     needs: ["iPhone: iOS 17 or later", "Android: Android 9 or later", "Mac: macOS 14 or later", "Windows: on the way"],
@@ -375,44 +382,21 @@ export const en: Copy = {
   earlyAccess: {
     badge: "Early access",
     title: "Early access: every feature is free for now",
-    lead: "Otayorin is in early access on iPhone, Android and Mac, and every feature is free while it lasts. We're still building it, so you may spot some rough edges.",
-    freeTitle: "Planned to stay free",
-    freeItems: [
-      "Reading handouts into your schedule",
-      "The family calendar and packing checklists",
-      "Reminders",
-      "Keeping and searching handouts",
-      "Ask about your handouts, with no limit",
-      "Sharing the schedule with your partner",
-    ],
-    paidTitle: "Planned for the paid plan, おたよりプラス (Otayori Plus)",
-    paidItems: [
-      "Sharing with more family, like grandparents or a babysitter",
-      "Reading PDFs and scans with several pages",
-      "Widgets on iPhone and Android",
-      "Sharing handout photos with family (coming with the official release)",
-      "More teacher links, and more handouts from teachers each month (a feature on the way)",
-      "The desktop app (Mac, with Windows on the way)",
-      "No ads (the free plan may show ads)",
-    ],
+    lead: "Peragoyomi is in early access on iPhone, Android and Mac, and every feature is free while it lasts. We're still building it, so you may spot some rough edges.",
     footnote:
-      "The paid plan is planned to cover the whole household. Prices and details will be announced on this page once they're decided. During early access, there are no ads and everything above is free.",
+      "Some features may become paid after the official release. We're still deciding which ones and the price, and we'll announce it here before anything changes.",
     feedback: ["Found a problem or have an idea? ", "Get in touch", "."],
   },
   faq: {
     title: "Questions from parents",
     items: [
       {
-        q: "Is Otayorin free?",
-        a: "Yes. During early access, every feature is free on iPhone, Android and Mac. After the official release, reading handouts, the calendar, reminders, Ask about your handouts and sharing the schedule with your partner are planned to stay free.",
-      },
-      {
-        q: "Which features will become paid?",
-        a: "After the official release, sharing with more family than your partner (grandparents or a babysitter, say), reading multi-page PDFs and scans, widgets, sharing handout photos with family, more teacher links and more handouts from teachers each month, and the desktop app (Mac, and Windows once it's out) are planned for the paid plan, おたよりプラス (Otayori Plus). Prices and details will be announced once they're decided.",
+        q: "Is Peragoyomi free?",
+        a: "Yes. During early access, every feature is free on iPhone, Android and Mac. After the official release, some features may become paid. We're still deciding which ones and the price, and we'll announce it on this page before anything changes.",
       },
       {
         q: "Will there be ads?",
-        a: "Not during early access. After the official release, the free plan may show ads. おたよりプラス (Otayori Plus) is planned to stay ad-free.",
+        a: "Not during early access. What happens after the official release is still being decided, and we'll announce it on this page before anything changes.",
       },
       {
         q: "What does early access mean?",
@@ -444,19 +428,23 @@ export const en: Copy = {
       },
       {
         q: "How many people can share one family?",
-        a: "During early access, up to 6 people can join one family. After the official release, sharing with your partner stays free, and adding more family, such as grandparents, is planned for おたよりプラス (Otayori Plus). iPhones and Android phones can mix, and each person sets their own reminder times on their own phone.",
+        a: "During early access, up to 6 people can join one family. iPhones and Android phones can mix, and each person sets their own reminder times on their own phone.",
+      },
+      {
+        q: "Can grandparents who don't use the app see the plans?",
+        a: "Yes. Send to family turns a handout's to-dos or tomorrow's plan into a message you can paste into LINE or Messages. Whoever gets it needs no app and no account. If you'd like them to see the shared calendar itself, invite them to your family.",
       },
       {
         q: "Are there limits on storage or questions?",
-        a: "Ask about your handouts is free on every plan, with no limit. Handouts have no app-side limit either: you can keep as many as your device can hold.",
+        a: "Not during early access. Search & ask has no limit, and handouts have no app-side limit either: you can keep as many as your device can hold.",
       },
       {
-        q: "Which devices can use Ask about your handouts?",
-        a: "iPhone, Android and Mac. With Apple Intelligence (iPhone on iOS 26 or later, Mac on macOS 26 or later) you can ask in your own words; on other devices, answers come as quick lists from your schedule and handouts. Both are free, and what you ask never leaves the device.",
+        q: "Which devices can use Search & ask?",
+        a: "iPhone, Android and Mac. Search works the same everywhere. With Apple Intelligence (iPhone on iOS 26 or later, Mac on macOS 26 or later) you can ask in your own words; on other devices, answers come as quick lists from your schedule and handouts. Either way, nothing you type or ask leaves the device.",
       },
       {
         q: "Does it work on a Windows PC?",
-        a: "A Windows version is on the way. For now, the computer app is for Mac (macOS 14 or later), and you start it by scanning a QR code with your signed-in phone. We'll announce it on this page when Windows is ready.",
+        a: "A Windows version is on the way. It's the same app as on the Mac: handouts are read on the PC itself, with the text recognition built into Windows. Windows has no on-device AI, so Ask answers with quick lists from your schedule and handouts. For now, the computer app is for Mac (macOS 14 or later), and you start it by scanning a QR code with your signed-in phone. We'll announce it on this page when Windows is ready.",
       },
       {
         q: "Does it translate handouts into English?",
@@ -471,7 +459,7 @@ export const en: Copy = {
   },
   footer: {
     label: "Footer",
-    copyright: "© 2026 Otayorin",
+    copyright: "© 2026 Peragoyomi",
     privacy: "Privacy",
     privacyHref: "/en/privacy/",
     terms: "Terms",

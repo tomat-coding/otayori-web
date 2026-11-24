@@ -22,7 +22,7 @@ export const SEND_HANDOUT_URLS = {
 } as const;
 
 /**
- * The app's terms describe おたよりプラス and the free plan's limits, so /terms/ shows them only once plans are
+ * The app's terms describe ぺらごよみプラス and the free plan's limits, so /terms/ shows them only once plans are
  * switched on. Until then it shows a placeholder, and the homepage's early-access copy stays true.
  */
 export const TERMS_PUBLISHED = false;
@@ -31,5 +31,5 @@ export const LINKS = {
   appStore: "#app-store",
   googlePlay: "#google-play",
   macDownload: "#mac-download",
-  contact: "mailto:hello@otayorin.example",
+  contact: "mailto:hello@peragoyomi.example",
 } as const;

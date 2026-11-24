@@ -6,39 +6,39 @@ When you settle a new term, add a row. When the app renames something, change th
 
 ## 用語
 
-| 使う                | 使わない                               | メモ                                                                                                                                                           |
-| ------------------- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| おたよりん          | おたよりー、オタヨリン                 | The brand. おたよりー is a different app; never name it. おたより alone is the common word for a handout.                                                      |
-| ログイン            | サインイン、サインアップ               | The app says ログイン everywhere (「ログインして始める」, 「Appleでログイン中」). Decided 2026-11-13 to match.                                                 |
-| お子さま            | お子様、子ども達                       |                                                                                                                                                                |
-| すべて              | 全て                                   |                                                                                                                                                                |
-| ください            | 下さい                                 | Auxiliary after て: 「お試しください」.                                                                                                                        |
-| いただく            | 頂く、頂き、頂け                       | Auxiliary: 「お使いいただけます」.                                                                                                                             |
-| できる              | 出来る、出来ます、出来ない、出来ません |                                                                                                                                                                |
-| こと                | する事、事ができ、事があ、事がない     | Formal noun in kana.                                                                                                                                           |
-| わかる              | 分かる、判る                           |                                                                                                                                                                |
-| 1か月               | ヶ月、ヵ月、カ月                       | Also 3か月, 何か月.                                                                                                                                            |
-| 早期アクセス        | アーリーアクセス、ベータ版             | The site's name for the current phase.                                                                                                                         |
-| 正式リリース        | 正式版リリース、本リリース             |                                                                                                                                                                |
-| おたよりプラス      | おたより+、おたよりPlus                | The planned paid plan. Name only; no price or limits until plans are live.                                                                                     |
-| 「おたよりに質問」  | おたより質問、AIに質問                 | Feature name; in 「」 in running text. Headings and titles may drop the 「」.                                                                                  |
-| 端末                | デバイス                               | Matches the app (端末 22 times).                                                                                                                               |
-| 要確認              | 要チェック                             | The review screen's label in the app.                                                                                                                          |
-| 書類                | ドキュメント                           | The app's tab name.                                                                                                                                            |
-| 読み取る / 読み取り | スキャンする、読み込む                 | The app's verb for reading a handout. スキャン is fine for a paper scan as a file (「PDFやスキャン」).                                                         |
-| お問い合わせ        | お問合せ、お問い合せ、問合せ           |                                                                                                                                                                |
-| パートナー          | 旦那、嫁、ご主人、奥さん               | Fits every family; see voice.md.                                                                                                                               |
-| 保護者              | ママ、パパ                             | Don't gender the reader.                                                                                                                                       |
-| 繰り返し            | くり返し                               | Matches the app's 「繰り返し」 setting. Decided 2026-11-13.                                                                                                    |
-| スマホ              | スマートフォン                         | The app's word and the one parents use. Decided 2026-11-13.                                                                                                    |
-| パソコン版 / Mac版  |                                        | パソコン版 is the desktop app in general, the app's own word (Mac now, Windows on the way). Say Mac版 when the text is about the Mac only. Updated 2026-11-13. |
-| リマインダー        |                                        | The feature. Where text names an app setting, use the setting's own words (「リマインドの設定」). Decided 2026-11-13.                                          |
+| 使う                | 使わない                                    | メモ                                                                                                                                                            |
+| ------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ぺらごよみ          | おたよりん、ペラゴヨミ、ぺら暦              | The brand (renamed from おたよりん on 2026-11-24). おたよりん and おたよりー are other apps; never write them. おたより alone is the common word for a handout. |
+| ログイン            | サインイン、サインアップ                    | The app says ログイン everywhere (「ログインして始める」, 「Appleでログイン中」). Decided 2026-11-13 to match.                                                  |
+| お子さま            | お子様、子ども達                            |                                                                                                                                                                 |
+| すべて              | 全て                                        |                                                                                                                                                                 |
+| ください            | 下さい                                      | Auxiliary after て: 「お試しください」.                                                                                                                         |
+| いただく            | 頂く、頂き、頂け                            | Auxiliary: 「お使いいただけます」.                                                                                                                              |
+| できる              | 出来る、出来ます、出来ない、出来ません      |                                                                                                                                                                 |
+| こと                | する事、事ができ、事があ、事がない          | Formal noun in kana.                                                                                                                                            |
+| わかる              | 分かる、判る                                |                                                                                                                                                                 |
+| 1か月               | ヶ月、ヵ月、カ月                            | Also 3か月, 何か月.                                                                                                                                             |
+| 早期アクセス        | アーリーアクセス、ベータ版                  | The site's name for the current phase.                                                                                                                          |
+| 正式リリース        | 正式版リリース、本リリース                  |                                                                                                                                                                 |
+| ぺらごよみプラス    | おたよりプラス、ぺらごよみ+、ぺらごよみPlus | The planned paid plan. Name only; no price or limits until plans are live.                                                                                      |
+| 「おたよりに質問」  | おたより質問、AIに質問                      | Feature name; in 「」 in running text. Headings and titles may drop the 「」.                                                                                   |
+| 端末                | デバイス                                    | Matches the app (端末 22 times).                                                                                                                                |
+| 要確認              | 要チェック                                  | The review screen's label in the app.                                                                                                                           |
+| 書類                | ドキュメント                                | The app's tab name.                                                                                                                                             |
+| 読み取る / 読み取り | スキャンする、読み込む                      | The app's verb for reading a handout. スキャン is fine for a paper scan as a file (「PDFやスキャン」).                                                          |
+| お問い合わせ        | お問合せ、お問い合せ、問合せ                |                                                                                                                                                                 |
+| パートナー          | 旦那、嫁、ご主人、奥さん                    | Fits every family; see voice.md.                                                                                                                                |
+| 保護者              | ママ、パパ                                  | Don't gender the reader.                                                                                                                                        |
+| 繰り返し            | くり返し                                    | Matches the app's 「繰り返し」 setting. Decided 2026-11-13.                                                                                                     |
+| スマホ              | スマートフォン                              | The app's word and the one parents use. Decided 2026-11-13.                                                                                                     |
+| パソコン版 / Mac版  |                                             | パソコン版 is the desktop app in general, the app's own word (Mac now, Windows on the way). Say Mac版 when the text is about the Mac only. Updated 2026-11-13.  |
+| リマインダー        |                                             | The feature. Where text names an app setting, use the setting's own words (「リマインドの設定」). Decided 2026-11-13.                                           |
 
 ## Notation
 
 | Thing                         | Rule                                                                         | Example                                                |
 | ----------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Title separator               | Full-width 「｜」, no spaces                                                 | 学校・保育園のおたより・プリント管理アプリ｜おたよりん |
+| Title separator               | Full-width 「｜」, no spaces                                                 | 学校・保育園のおたより・プリント管理アプリ｜ぺらごよみ |
 | Digits and Latin              | Half-width                                                                   | 10枚, iOS 26以降, 10MB                                 |
 | Space before a version number | Half-width space between the Latin name and the number, none before Japanese | iOS 26以降, macOS 14以降                               |
 | Japanese punctuation          | Full-width 、。「」（）？！：・                                              | 対応OS：iOS 17以降                                     |

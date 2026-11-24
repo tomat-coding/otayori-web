@@ -48,7 +48,7 @@ Also check dropped or doubled characters (をを, のの) and missing small kana
 **Keigo mistakes.** Errors, not style:
 
 - Humble verb used for the reader's action: 「ご利用できます」 → 「ご利用いただけます」 or 「ご利用になれます」. 「お申し込みできます」 for the reader → 「お申し込みいただけます」.
-- Honorific for your own side: 「おたよりんがおっしゃる」.
+- Honorific for your own side: 「ぺらごよみがおっしゃる」.
 - Double keigo: 「おっしゃられる」, 「ご覧になられる」, 「お見えになられる」, 「拝見させていただく」. One honorific per verb.
 - 「伺ってください」 to the reader (伺う is humble) → 「お尋ねください」 / 「お問い合わせください」.
 
@@ -77,7 +77,7 @@ Also check dropped or doubled characters (をを, のの) and missing small kana
 
 Compare against `glossary.md`, the rest of the site, and the app's `strings.xml`.
 
-- **Terms.** One name per thing: feature names (「おたよりに質問」, おたよりプラス, 早期アクセス), screens (ホーム, 書類, 確認画面), statuses (要確認), actions (サインイン). A button the app calls 「読み取る」 shouldn't be 「スキャンする」 on the site.
+- **Terms.** One name per thing: feature names (「おたよりに質問」, ぺらごよみプラス, 早期アクセス), screens (ホーム, 書類, 確認画面), statuses (要確認), actions (サインイン). A button the app calls 「読み取る」 shouldn't be 「スキャンする」 on the site.
 - **Kanji or kana (漢字の開き).** Auxiliary verbs and formal nouns are written in kana: ください, いただく, できる, こと, とき, もの, ところ, ほか, など, よう, わかる, すべて. Content words stay in kanji (使う, 選ぶ, 予定). Follow `glossary.md`; when it's silent, follow what the site already does most.
 - **Okurigana.** One form per word: 読み取り, 取り込む, 引き落とし, 締め切り, 申し込み, 受け付ける (verb) / 受付 (noun, as in 受付時間). Nouns in compact lists may use the short form (振込); keep that as the site has it.
 - **お / ご.** Same word, same prefix everywhere: お子さま, ご家族, お問い合わせ, ご意見, ご報告.
